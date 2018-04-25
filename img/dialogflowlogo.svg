@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="130px" viewBox="0 0 130 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>dialogflowlogo.svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M78.904875,20.892375 L44.8153125,1.2193125 C42.6109687,-0.0538125 39.8685,-0.0538125 37.6641562,1.2193125 L3.57525,20.892375 C1.37090625,22.1819062 0.01640625,24.53325 0.01640625,27.0965625 L0.01640625,66.4755 C0.01640625,69.0224063 1.3715625,71.3730938 3.57525,72.6632813 L20.6364375,82.5240938 L20.6364375,102.62175 C20.6364375,103.8135 21.5998125,104.760469 22.7915625,104.760469 C23.1669375,104.760469 23.5265625,104.662688 23.8527187,104.466469 L78.9534375,72.6790313 C81.1577812,71.4059063 82.5286875,69.0545625 82.5122812,66.49125 L82.5122812,27.0965625 C82.4965312,24.5168437 81.1249687,22.1661562 78.904875,20.892375 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-7" transform="translate(-466.000000, -5265.000000)">
+            <text id="Dialogflow" font-family="Poppins-Regular, Poppins" font-size="24" font-weight="normal" line-spacing="42" letter-spacing="-0.00260000001" fill="#666666">
+                <tspan x="468.0797" y="5418">Dialogflow</tspan>
+            </text>
+            <g id="Dialogflow" transform="translate(489.000000, 5277.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="SVGID_1_"></g>
+                <g id="Group" mask="url(#mask-2)" fill-rule="nonzero">
+                    <g transform="translate(0.000000, -1.312500)" id="Shape">
+                        <polygon fill="#EF6C00" points="0 24.278625 0 71.885625 20.6200313 83.787375 20.6200313 107.607281 82.4637188 71.885625 82.4637188 24.278625 41.2400625 48.082125"></polygon>
+                        <polygon fill="#FF9800" points="0 24.278625 41.2400625 0.47446875 82.4637188 24.278625 41.2400625 48.082125"></polygon>
+                        <polygon fill="#BF360C" opacity="0.1" points="81.5003438 23.7070313 40.5214688 47.3635312 0.2611875 24.1152188 0 24.278625 41.2400625 48.082125 82.4637188 24.278625"></polygon>
+                        <polygon fill="#FFFFFF" opacity="0.1" points="41.2400625 48.082125 0.2611875 24.425625 0 24.5719687 41.2400625 48.376125"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

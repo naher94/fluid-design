@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="130px" viewBox="0 0 130 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>alexalogo.svg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-7" transform="translate(-656.000000, -4993.000000)">
+            <text id="Amazon-Alexa" font-family="Poppins-Regular, Poppins" font-size="24" font-weight="normal" line-spacing="42" letter-spacing="-0.00260000001" fill="#666666">
+                <tspan x="635.9956" y="5147">Amazon Alexa</tspan>
+            </text>
+            <path d="M713.158522,5107.37035 L713.158522,5097.45758 C713.158522,5093.93348 711.000112,5090.7922 707.727314,5089.40277 C695.477989,5084.20304 686.904382,5072.04 686.904382,5058 C686.904382,5039.28578 702.135832,5023.90466 720.999721,5023.90466 C739.86361,5023.90466 755.095059,5039.28578 755.095059,5058 C755.095059,5080.08056 738.014302,5100.95934 713.158522,5107.37035 M720.999721,5008 C693.336053,5008 671,5030.55636 671,5058 C671,5085.44364 693.336053,5107.99972 720.999721,5107.99972 C748.663109,5107.99972 771,5085.44364 771,5058 C771,5030.55636 748.663109,5008 720.999721,5008" id="Alexa-Logo" fill="#00CAFF"></path>
+        </g>
+    </g>
+</svg>
