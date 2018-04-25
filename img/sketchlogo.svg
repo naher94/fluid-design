@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="130px" viewBox="0 0 130 130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop HD Copy 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-7" transform="translate(-297.000000, -3388.000000)">
+            <text id="Sketch" font-family="Poppins-Regular, Poppins" font-size="24" font-weight="normal" line-spacing="42" letter-spacing="-0.00260000001" fill="#666666">
+                <tspan x="321.4798" y="3541">Sketch</tspan>
+            </text>
+            <g id="Sketch_logo_frame" transform="translate(311.000000, 3408.000000)" fill-rule="nonzero">
+                <g id="Base" fill="#FFAE00">
+                    <polygon id="Polygon" transform="translate(50.500000, 45.500000) rotate(-180.000000) translate(-50.500000, -45.500000) " points="50.5 -2.84217094e-14 101 58.4272931 79.1234818 87.9463087 50.5 91 21.8765182 87.9463087 2.84217094e-14 58.4272931"></polygon>
+                </g>
+                <g id="Bottom-Back" transform="translate(0.000000, 33.000000)" fill="#EC6C00">
+                    <polygon id="Polygon" transform="translate(50.500000, 29.000000) rotate(-180.000000) translate(-50.500000, -29.000000) " points="50.5 -2.84217094e-14 101 58 2.84217094e-14 58"></polygon>
+                </g>
+                <g id="Bottom-Mid" transform="translate(20.000000, 33.000000)" fill="#FFAE00">
+                    <polygon id="Polygon" transform="translate(30.000000, 29.000000) rotate(-180.000000) translate(-30.000000, -29.000000) " points="30 -2.84217094e-14 60 58 2.84217094e-14 58"></polygon>
+                </g>
+                <g id="Top-Mid" transform="translate(20.000000, 0.000000)" fill="#FFEFB4">
+                    <polygon id="Polygon" transform="translate(30.000000, 16.500000) rotate(-180.000000) translate(-30.000000, -16.500000) " points="30 33 60 5.56416025e-13 0 -1.42108547e-14"></polygon>
+                </g>
+                <g id="Top-Side-Left" transform="translate(0.000000, 3.000000)" fill="#FFAE00">
+                    <polygon id="Polygon" transform="translate(11.000000, 15.000000) rotate(-180.000000) translate(-11.000000, -15.000000) " points="7.10542736e-15 30 11.3084112 14.8965517 22 5.52753246e-13 1.23364486 0"></polygon>
+                </g>
+                <g id="Top-Side-Right" transform="translate(90.000000, 18.000000) scale(-1, 1) translate(-90.000000, -18.000000) translate(79.000000, 3.000000)" fill="#FFAE00">
+                    <polygon id="Polygon" transform="translate(11.000000, 15.000000) rotate(-180.000000) translate(-11.000000, -15.000000) " points="7.10542736e-15 30 11.3084112 14.8965517 22 5.52753246e-13 1.23364486 0"></polygon>
+                </g>
+                <g id="Top-Left" transform="translate(20.000000, 0.000000)" fill="#FED305">
+                    <polygon id="Polygon" transform="translate(15.000000, 16.500000) rotate(-180.000000) translate(-15.000000, -16.500000) " points="28.5714286 29.90625 30 -1.42108547e-14 1.42108547e-14 33"></polygon>
+                </g>
+                <g id="Top-Right" transform="translate(51.000000, 0.000000)" fill="#FED305">
+                    <polygon id="Polygon" transform="translate(15.000000, 16.500000) scale(-1, 1) rotate(-180.000000) translate(-15.000000, -16.500000) " points="28.5714286 29.90625 30 -1.42108547e-14 -1.42108547e-14 33"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

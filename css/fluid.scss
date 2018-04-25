@@ -39,12 +39,16 @@ h5,
 h6 {
   font-family: $poppins;
   font-weight: $bold;
-  text-align: center;
 }
 
 h1{
   margin-top: 100px;
   margin-bottom: 60px;
+  text-align: center;
+}
+
+h2{
+  font-weight: $semibold;
 }
 
 .quote{
@@ -56,6 +60,14 @@ h1{
     text-align: right;
     font-style: italic;
   }
+}
+
+.image-container{
+  text-align: center;
+}
+
+.application-name{
+  text-align: center;
 }
 
 //****** header wave stuff
