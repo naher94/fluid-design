@@ -15,6 +15,8 @@ $fluid-water: #7BC8D2;
 
 
 // Fonts
+
+////Poppins
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,500i,600,700');
 $poppins: 'Poppins', sans-serif;
 $regular: 400;
@@ -22,6 +24,13 @@ $medium: 500;
 $medium-italics: 500i;
 $semibold: 600;
 $bold: 700;
+
+////Lato
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+$lato: 'Lato', sans-serif;
+$lato-regular:400;
+$lato-bold: 700;
+
 
 //******* End of Variables
 
@@ -51,15 +60,15 @@ h2{
   font-weight: $semibold;
 }
 
-.quote{
-  p{
-    font-size: 32px;
-    line-height: 1.3;
-  }
-  .quote-author{
-    text-align: right;
-    font-style: italic;
-  }
+p{
+  font-size: 32px;
+  line-height: 1.3;
+  font-family: $lato;
+
+}
+.quote-author{
+  text-align: right;
+  font-style: italic;
 }
 
 .image-container{
@@ -68,6 +77,20 @@ h2{
 
 .application-name{
   text-align: center;
+}
+
+section{
+  margin-top: 160px;
+}
+
+.message-bubble{
+  background-color: #047cfe;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 30px;
 }
 
 //****** header wave stuff
