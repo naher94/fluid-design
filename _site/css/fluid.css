@@ -56,7 +56,11 @@ section {
 .workshop-numbers {
   position: relative;
   font-size: 50px;
-  font-weight: 700; }
+  font-weight: 700;
+  font-family: "Lato", sans-serif; }
+
+.workshop-title {
+  font-size: 26px; }
 
 .workshop1 {
   background-color: #6f96f5; }
