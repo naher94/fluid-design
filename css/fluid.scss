@@ -93,6 +93,43 @@ section{
   border-radius: 30px;
 }
 
+.workshop{
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.workshop-numbers{
+  position: relative;
+  font-size: 50px;
+  font-weight: $lato-bold;
+}
+
+.workshop1{
+  background-color: #6f96f5;
+}
+.workshop2{
+  background-color: #f5f26f;
+}
+.workshop3{
+  background-color: #f56f6f;
+}
+.workshop4{
+  background-color: #a2f56f;
+}
+.workshop5{
+  background-color: #6fe4f5;
+}
+.workshop6{
+  background-color: #f5b76f;
+}
+.workshop7{
+  background-color: #8d6ff5;
+}
+.workshop8{
+  background-color: #f56ff4;
+}
+
+
 //****** header wave stuff
 header{
   height: 50vh;
