@@ -1,14 +1,36 @@
 <header class="site-header">
 
-  <svg>
-      <defs>
-        <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="20%">
-          <stop offset="0%" stop-color="#F15F63"/>
-          <stop offset="100%" stop-color="#F79868"/>
-        </linearGradient>
-      </defs>
-      <g><polyline id="wave"/></g>
-    </svg>
-    <h1>Fluid</h1>
+  <style>
+  .header-wave {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .header-wave-bg {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(80deg, #F15F63 0%, #F79868 100%);
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+    .header-wave-cover {
+      width: 300%;
+      height: 25%;
+      position: absolute;
+      left: 0%;
+      bottom: 0%;
+      background-color: rgba(0,0,0,0);
+
+      background-image: url('../img/wave-cover.svg');
+      background-size: 100% 100%;
+    }
+  </style>
+
+  <div class="header-wave">
+    <div class='header-wave-bg'></div>
+    <div class='header-wave-cover'></div>
+  </div>
+  <h1>Fluid</h1>
 
 </header>
