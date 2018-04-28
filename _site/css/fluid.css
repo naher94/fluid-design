@@ -159,7 +159,11 @@ section {
     margin-bottom: 50px; }
 
 .designed-experience {
-  margin-top: 200px; }
+  margin-top: 80px;
+  margin-bottom: 120px; }
+
+.image-spacing {
+  margin-bottom: 60px; }
 
 .fluid-hero {
   margin-top: 60px; }
