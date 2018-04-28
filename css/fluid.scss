@@ -94,7 +94,7 @@ section{
 }
 
 .workshop{
-  padding: 10px;
+  padding: 25px;
   border-radius: 25px;
 }
 
@@ -144,6 +144,56 @@ section{
   background-color: #ec463e;
 }
 
+.app-phase{
+  text-align: center;
+  margin-top: 30px;
+  font-size: 50px;
+  font-family: $poppins;
+}
+
+.app-phase-text{
+  font-size: 22px;
+}
+
+.hero-text{
+  font-size: 60px;
+  text-align: center;
+  font-family: $poppins;
+  font-weight: $bold;
+}
+
+.feature-container{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.feature-tile{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 0 10px 0 rgba(196, 196, 196, 0.5);
+  
+  .feature-icon{
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .feature-title{
+    font-family: $poppins;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: $semibold;
+  }
+  .feature-text{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 //****** header wave stuff
 header{

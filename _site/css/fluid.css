@@ -50,7 +50,7 @@ section {
   border-radius: 30px; }
 
 .workshop {
-  padding: 10px;
+  padding: 25px;
   border-radius: 25px; }
 
 .workshop-numbers {
@@ -94,6 +94,47 @@ section {
 
 .pizza {
   background-color: #ec463e; }
+
+.app-phase {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 50px;
+  font-family: "Poppins", sans-serif; }
+
+.app-phase-text {
+  font-size: 22px; }
+
+.hero-text {
+  font-size: 60px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700; }
+
+.feature-container {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.feature-tile {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 0 10px 0 rgba(196, 196, 196, 0.5); }
+  .feature-tile .feature-icon {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  .feature-tile .feature-title {
+    font-family: "Poppins", sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600; }
+  .feature-tile .feature-text {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px; }
 
 header {
   height: 50vh;
