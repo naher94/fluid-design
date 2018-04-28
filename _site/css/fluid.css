@@ -156,6 +156,14 @@ section {
     padding-right: 20px;
     margin-bottom: 50px; }
 
+.hero-text {
+  margin-bottom: 120px;
+  margin-top: 100px; }
+
+.fluid-app-icon {
+  margin-top: 50px;
+  margin-bottom: 100px; }
+
 header {
   height: 50vh;
   overflow: hidden;
