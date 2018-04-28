@@ -58,6 +58,8 @@ h1{
 
 h2{
   font-weight: $semibold;
+  margin-top: 120px;
+  margin-bottom: 30px;
 }
 
 p{
@@ -91,6 +93,7 @@ section{
   padding-top: 15px;
   padding-bottom: 10px;
   border-radius: 30px;
+  margin-bottom: 50px;
 }
 
 .workshop{
@@ -222,6 +225,15 @@ section{
     padding-right: 20px;
     margin-bottom: 50px;
   }
+}
+
+.designed-experience{
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.image-spacing{
+  margin-bottom: 60px;
 }
 
 .fluid-hero{
