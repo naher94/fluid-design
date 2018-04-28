@@ -129,15 +129,32 @@ section {
     max-width: 100px;
     margin-top: 30px;
     margin-bottom: 30px; }
+  .feature-tile .feature-icon-2 {
+    text-align: center;
+    margin-bottom: 60px; }
+    .feature-tile .feature-icon-2 img {
+      max-width: 100px; }
   .feature-tile .feature-title {
     font-family: "Poppins", sans-serif;
     padding-left: 20px;
     padding-right: 20px;
     font-weight: 600; }
+  .feature-tile .feature-title-2 {
+    font-family: "Poppins", sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 42px;
+    margin-bottom: 20px; }
   .feature-tile .feature-text {
     font-size: 20px;
     padding-left: 20px;
     padding-right: 20px; }
+  .feature-tile .feature-text-2 {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px; }
 
 header {
   height: 50vh;

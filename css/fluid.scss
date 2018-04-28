@@ -187,16 +187,40 @@ section{
     margin-bottom: 30px;
   }
   
+  .feature-icon-2{
+    text-align: center;
+    margin-bottom: 60px;
+    img{
+      max-width: 100px;
+    }
+  }
+  
   .feature-title{
     font-family: $poppins;
     padding-left: 20px;
     padding-right: 20px;
     font-weight: $semibold;
   }
+  
+  .feature-title-2{
+    font-family: $poppins;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: $semibold;
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  
   .feature-text{
     font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .feature-text-2{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
   }
 }
 
