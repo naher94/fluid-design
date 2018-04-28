@@ -93,6 +93,151 @@ section{
   border-radius: 30px;
 }
 
+.workshop{
+  padding: 25px;
+  border-radius: 25px;
+}
+
+.workshop-numbers{
+  position: relative;
+  font-size: 50px;
+  font-weight: $lato-bold;
+  font-family: $lato;
+}
+
+.workshop-title{
+  font-size: 26px;
+}
+
+.workshop1{
+  background-color: #6f96f5;
+}
+.workshop2{
+  background-color: #f5f26f;
+}
+.workshop3{
+  background-color: #f56f6f;
+}
+.workshop4{
+  background-color: #a2f56f;
+}
+.workshop5{
+  background-color: #6fe4f5;
+}
+.workshop6{
+  background-color: #f5b76f;
+}
+.workshop7{
+  background-color: #8d6ff5;
+}
+.workshop8{
+  background-color: #f56ff4;
+}
+
+.rideshare{
+  background-color: #1b919b;
+}
+.movie{
+  background-color: #cc313d;
+}
+.pizza{
+  background-color: #ec463e;
+}
+
+.app-phase{
+  text-align: center;
+  margin-top: 30px;
+  font-size: 50px;
+  font-family: $poppins;
+}
+
+.app-phase-text{
+  font-size: 22px;
+}
+
+.hero-text{
+  font-size: 60px;
+  text-align: center;
+  font-family: $poppins;
+  font-weight: $bold;
+}
+
+.feature-container{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.feature-tile{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 0 10px 0 rgba(196, 196, 196, 0.5);
+  
+  .feature-image{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  
+  .feature-icon{
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .feature-icon-2{
+    text-align: center;
+    margin-bottom: 60px;
+    img{
+      max-width: 100px;
+    }
+  }
+  
+  .feature-title{
+    font-family: $poppins;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: $semibold;
+  }
+  
+  .feature-title-2{
+    font-family: $poppins;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: $semibold;
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-text{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .feature-text-2{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+.fluid-hero{
+  margin-top: 60px;
+}
+
+.hero-text{
+  margin-bottom: 120px;
+  margin-top: 100px;
+}
+
+.fluid-app-icon{
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
 //****** header wave stuff
 header{
   height: 50vh;
