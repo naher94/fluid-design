@@ -298,3 +298,26 @@ svg{
 
 //****** end of foundation overrides
 
+
+//******* Mobile Styling
+
+// Measurments pulled from foundation css file
+// Mobile Styling
+@media screen and (max-width: 40em) {
+  
+  .feature-image{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  p{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+  }
+}
+
+// Tablet Styling
+@media screen and (max-width: 64em) {
+  
+}
+//******* End of Mobile Styling

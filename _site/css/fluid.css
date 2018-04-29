@@ -211,3 +211,13 @@ svg {
 
 .site-footer {
   border-top: none; }
+
+@media screen and (max-width: 40em) {
+  .feature-image {
+    padding-left: 20px;
+    padding-right: 20px; }
+
+  p {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px; } }
