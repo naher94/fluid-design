@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="324px" height="324px" viewBox="0 0 324 324" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 32</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="300" height="300" rx="12"></rect>
+        <filter x="-6.0%" y="-6.0%" width="112.0%" height="112.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.543925383   0 0 0 0 0.543925383   0 0 0 0 0.543925383  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-32" transform="translate(12.000000, 12.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <path d="M23,18.1395349 L311,18.1395349 L11,318.139535 L11,30.1395349 C11,23.5121179 16.372583,18.1395349 23,18.1395349 Z" id="Rectangle-Copy-7" fill="#8D6FF5" opacity="0.3" mask="url(#mask-2)" transform="translate(155.498013, 159.010006) rotate(-180.000000) translate(-155.498013, -159.010006) "></path>
+            <path d="M12,0 L300,0 L0,300 L0,12 C-8.11624501e-16,5.372583 5.372583,1.21743675e-15 12,0 Z" id="Rectangle-Copy-7" fill="#F5F26F" opacity="0.2" mask="url(#mask-2)"></path>
+            <path d="M254.806484,185.256564 C253.561794,185.087385 252.291102,185 251,185 C235.536027,185 223,197.536027 223,213 C223,228.463973 235.536027,241 251,241 C251.943647,241 252.876391,240.953319 253.796049,240.862141 C246.223595,248.947622 235.451821,254 223.5,254 C200.580183,254 182,235.419817 182,212.5 C182,189.580183 200.580183,171 223.5,171 C235.993905,171 247.198293,176.521081 254.80648,185.25656 Z" id="Combined-Shape" fill="#8D6FF5" mask="url(#mask-2)"></path>
+            <circle id="Oval-9" fill="#F5F26F" mask="url(#mask-2)" cx="80.5" cy="79.5" r="41.5"></circle>
+        </g>
+    </g>
+</svg>
