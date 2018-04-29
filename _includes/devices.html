@@ -1,0 +1,310 @@
+<style>
+	.devices {
+		background-color: yellow;
+		width: 1100px;
+		height: 655px;
+		padding: 20px;
+	}
+	.devices-box {
+		position: absolute;
+	}
+	.devices-arrows {
+		position: absolute;
+	}	
+	.devices-screens {
+		position: absolute;
+	}
+	.devices-screens rect {
+		opacity: 0.3;
+	}
+	.devices-screens path {
+		opacity: 0.3;
+	}
+	.devices-bodies {
+		position: absolute;
+	}
+</style>
+
+<script>
+	window.addEventListener('load', function() {
+		var basicTimeline = anime.timeline();
+		basicTimeline.autoplay = false;
+
+		basicTimeline.add({
+			targets: '.devices-screens rect',
+			fill: '#ff0000',
+			easing: 'easeOutExpo',
+			opacity: 1,
+			offset: 0,
+			duration: 100,
+		});
+		basicTimeline.add({
+			targets: '.devices-screens path',
+			fill: '#ff0000',
+			easing: 'easeOutExpo',
+			opacity: 1,
+			offset: 0,
+			duration: 100,
+		});
+
+		document.body.addEventListener('mousemove', function (e) {
+			basicTimeline.seek(basicTimeline.duration * (e.x/window.innerWidth))
+		})
+	});
+</script>
+
+<div class="devices">
+	<div class="devices-box">
+		
+	</div><!-- devices-box-->
+
+	<div class="devices-arrows">
+		
+	</div><!-- devices-arrows-->
+
+	<div class="devices-bodies">
+		
+	</div><!-- devices-bodies-->
+
+	<div class="devices-screens-gray">
+		
+	</div><!-- devices-screens-gray-->
+
+	<div class="devices-screens">
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+		<svg
+		   xmlns:dc="http://purl.org/dc/elements/1.1/"
+		   xmlns:cc="http://creativecommons.org/ns#"
+		   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		   xmlns:svg="http://www.w3.org/2000/svg"
+		   xmlns="http://www.w3.org/2000/svg"
+		   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+		   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+		   width="1210px"
+		   height="748px"
+		   viewBox="0 0 1210 748"
+		   version="1.1"
+		   id="svg2"
+		   inkscape:version="0.91 r13725"
+		   sodipodi:docname="device-screens.svg">
+		  <metadata
+		     id="metadata88">
+		    <rdf:RDF>
+		      <cc:Work
+		         rdf:about="">
+		        <dc:format>image/svg+xml</dc:format>
+		        <dc:type
+		           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		        <dc:title>Fluid Design</dc:title>
+		      </cc:Work>
+		    </rdf:RDF>
+		  </metadata>
+		  <sodipodi:namedview
+		     pagecolor="#ffffff"
+		     bordercolor="#666666"
+		     borderopacity="1"
+		     objecttolerance="10"
+		     gridtolerance="10"
+		     guidetolerance="10"
+		     inkscape:pageopacity="0"
+		     inkscape:pageshadow="2"
+		     inkscape:window-width="1109"
+		     inkscape:window-height="733"
+		     id="namedview86"
+		     showgrid="false"
+		     inkscape:zoom="0.51239669"
+		     inkscape:cx="593.42091"
+		     inkscape:cy="361.76918"
+		     inkscape:window-x="0"
+		     inkscape:window-y="0"
+		     inkscape:window-maximized="0"
+		     inkscape:current-layer="svg2" />
+		  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+		  <title
+		     id="title4">Fluid Design</title>
+		  <desc
+		     id="desc6">Created with Sketch.</desc>
+		  <defs
+		     id="defs8">
+		    <rect
+		       id="path-1"
+		       x="0"
+		       y="0"
+		       width="73"
+		       height="129"
+		       rx="7" />
+		    <path
+		       d="M35,29 L74.1835479,14.8997292 L80.9219285,92.9015963 C81.7716443,107.999399 80.1455058,118.319183 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C0.995140228,118.319183 -0.630998313,107.999399 0.218717533,92.9015963 L6.14064603,29 L35,29 Z"
+		       id="path-3" />
+		    <path
+		       d="M0.0767384578,96 L81.0639076,96 C81.5320111,109.419881 79.8585462,118.706864 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C1.28209987,118.706864 -0.391365028,109.419881 0.0767384578,96 Z"
+		       id="path-4" />
+		    <ellipse
+		       id="path-5"
+		       cx="40.2014903"
+		       cy="22.2432513"
+		       rx="34.7865841"
+		       ry="14.6986825" />
+		  </defs>
+		  <rect
+		     id="Rectangle-6"
+		     x="90"
+		     y="508"
+		     width="89"
+		     height="33"
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy"
+		     x="184"
+		     y="508"
+		     width="206"
+		     height="33"
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-2"
+		     x="90"
+		     y="546"
+		     width="300"
+		     height="56"
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-3"
+		     x="90"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-4"
+		     x="294"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-5"
+		     x="192"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-6"
+		     x="555"
+		     y="518"
+		     width="33"
+		     height="19"
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-7"
+		     x="590"
+		     y="518"
+		     width="78"
+		     height="19"
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-8"
+		     x="555"
+		     y="539"
+		     width="113"
+		     height="54"
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-9"
+		     x="555"
+		     y="595"
+		     width="36"
+		     height="54"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-12"
+		     x="555"
+		     y="651"
+		     width="113"
+		     height="27"
+		     style="fill:#e986e0;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-10"
+		     x="632"
+		     y="595"
+		     width="36"
+		     height="54"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-11"
+		     x="593"
+		     y="595"
+		     width="37"
+		     height="54"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 1125.1223,406.91987 3.3777,8.10504 c -6.916,-3.14422 -11.494,-5.03665 -13.7342,-5.67729 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.17381 C 1000,390.4504 1005.4504,385 1012.1738,385 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.17381 0,3.98649 -1.9161,7.52543 -4.8777,9.74606 z"
+		     id="path68"
+		     inkscape:connector-curvature="0"
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 1125.1223,533.91987 3.3777,8.10504 c -6.916,-3.14422 -11.494,-5.03665 -13.7342,-5.67729 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.17381 C 1000,517.4504 1005.4504,512 1012.1738,512 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.17381 0,3.98649 -1.9161,7.52543 -4.8777,9.74606 z"
+		     id="Combined-Shape-Copy-3"
+		     inkscape:connector-curvature="0"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Combined-Shape-Copy-2"
+		     transform="scale(-1,1)"
+		     x="-1081"
+		     y="420"
+		     width="130"
+		     height="24"
+		     rx="12"
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Combined-Shape-Copy-5"
+		     transform="scale(-1,1)"
+		     x="-1130"
+		     y="485"
+		     width="130"
+		     height="24"
+		     rx="12"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 955.87768,468.91987 -3.37767,8.10504 c 6.91597,-3.14422 11.49402,-5.03665 13.73417,-5.67729 l 102.59202,0 c 6.7234,0 12.1738,-5.4504 12.1738,-12.17381 C 1081,452.4504 1075.5496,447 1068.8262,447 l -105.65239,0 C 956.4504,447 951,452.4504 951,459.17381 c 0,3.98649 1.91615,7.52543 4.87768,9.74606 z"
+		     id="Combined-Shape-Copy-4"
+		     inkscape:connector-curvature="0"
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="19"
+		     width="18.362904"
+		     y="581.47992"
+		     x="786.83978"
+		     id="rect4321" />
+		  <rect
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="19"
+		     width="41.430035"
+		     y="581.47992"
+		     x="807.83978"
+		     id="rect4323" />
+		  <rect
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="54"
+		     width="62.285046"
+		     y="602.47992"
+		     x="786.83978"
+		     id="rect4325" />
+		  <rect
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="38.130016"
+		     width="36"
+		     y="658.47992"
+		     x="786.83978"
+		     id="rect4327" />
+		  <rect
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="37.440014"
+		     width="24.235012"
+		     y="658.47992"
+		     x="824.83978"
+		     id="rect4333" />
+		</svg>
+	</div><!-- devices-screens-->
+</div>
