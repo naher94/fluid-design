@@ -1,4 +1,13 @@
 window.addEventListener('load', function() {
+	$(window).scroll(function() {
+        //console.log($(window).scrollTop())
+        //console.log($('.splash').position().top)
+
+        var x = basicTimeline.duration * ($('.splash').position().top + ($('.splash').height()/4) - $(window).scrollTop())/400;
+        console.log(x)
+		basicTimeline.seek(basicTimeline.duration-x)
+    });
+
 	var el = document.querySelector('#domNode .el');
 
 	anime({
@@ -12,6 +21,78 @@ window.addEventListener('load', function() {
 	});
 
 	var basicTimeline = anime.timeline();
+	basicTimeline.autoplay = false;
+	basicTimeline
+		  .add({
+		    targets: '.wave .wave-rect',
+		    d: "m 0,39517 c 0,0 233.40878,6.553 353.89628,5.247 120.4875,-1.306 241.99913,-1.077 362.99958,-1.247 132.01561,-0.185 266.67567,-1.077 396.04714,0.249 C 1222.6229,39522.373 1440,39517 1440,39517 l -2,-100 -1438,2 z",
+		    easing: 'easeOutExpo',
+		    offset: 0,
+		    duration: 300,
+		  })
+		  .add({
+		    targets: '.wave .wave-rect',
+		    d: "m 0,39517 c 0,0 233.40878,16.553 353.89628,15.247 120.4875,-1.306 238.91916,-98.292 364.99958,-99.247 134.88325,-1.022 262.67567,98.923 392.04714,100.249 C 1220.6229,39534.373 1440,39517 1440,39517 l -2,-100 -1438,2 z",
+		    easing: 'easeOutQuad',
+		    offset: 900,
+		    duration: 300,
+		  })
+		  .add({
+		    targets: '.wave .wave-rect',
+		    d: "m 0,39517 c 0,0 233.40878,6.553 353.89628,5.247 120.4875,-1.306 241.99913,-1.077 362.99958,-1.247 132.01561,-0.185 266.67567,-1.077 396.04714,0.249 C 1222.6229,39522.373 1440,39517 1440,39517 l -2,-100 -1438,2 z",
+		    easing: 'easeInQuad',
+		    offset: 1200,
+		    duration: 300,
+		  })
+
+		  .add({
+		    targets: '.splash .drop',
+		    top: '700',
+		    easing: 'linear',
+		    offset: 0,
+		    duration: 1500,
+		  })
+		  .add({
+		    targets: '.splash .drop',
+		    easing: 'easeInExpo',
+		    offset: 0,
+		    opacity: 1,
+		    duration: 200,
+		  })
+
+		  .add({
+		    targets: '.splash .drops-both',
+		    easing: 'linear',
+		    offset: 700,
+		    opacity: 1,
+		    duration: 500,
+		  })
+		  .add({
+		    targets: '.splash .drops-both',
+		    easing: 'linear',
+		    offset: 1200,
+		    opacity: 0,
+		    duration: 500,
+		  })
+
+		  .add({
+		    targets: '.splash .drops-right',
+		    easing: 'linear',
+		    top: '-50px',
+		    left: '50px',
+		    offset: 700,
+		    duration: 1500,
+		  })
+		  .add({
+		    targets: '.splash .drops-left',
+		    easing: 'linear',
+		    top: '-50px',
+		    left: '-50px',
+		    offset: 700,
+		    duration: 1500,
+		  })
+
+	/*var basicTimeline = anime.timeline();
 	basicTimeline.autoplay = false;
 		basicTimeline
 		  .add({
@@ -149,11 +230,6 @@ window.addEventListener('load', function() {
 		    easing: 'easeInQuad',
 		    offset: 600,
 		    duration: 300,
-		  })
-
-	document.body.addEventListener('mousemove', function (e) {
-		var x = basicTimeline.duration * (e.x/window.innerWidth);
-		basicTimeline.seek(x)
-	})
+		  })*/
 
 });

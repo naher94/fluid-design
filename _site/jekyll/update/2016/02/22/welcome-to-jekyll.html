@@ -108,53 +108,60 @@
     <style>
 	.splash {
 		width: 100%;
-		height: 600px;
+		height: 1000px;
 		overflow: hidden;
 		position: relative;
 	}
 	.water {
 		position: absolute;
-		top: 200px;
 		left: 0px;
-		width: 105%;
-		transform: translateX(-2.5%);
+		bottom: 0px;
+		width: 100%;
+		height: 50%;
 	}
 	.wave {
 		position: absolute;
-		top: 200px;
+		width: 100%;
+		top: 50%;
 		left: 0px;
+		/*transform: translateX(-25%);*/
 	}
 	.mask {
-		position: absolute;
-		top: 200px;
-		left: -180px;
-		opacity: 0.8;
-		transform-origin: 47.8% 5%;
-	}
-	.mask2 {
-		position: absolute;
-		top: 200px;
-		left: -180px;
-		opacity: 0.8;
-		transform-origin: 47.8% 5%;
-	}
-	.drops-right {
 		position: absolute;
 		left: 0px;
 		top: 0px;
 		opacity: 0.0;
+	}
+	.mask2 {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		opacity: 0.0;
+	}
+	.drops-right {
+		position: absolute;
+		left: -50px;
+		top: 0px;
+		padding-top: 378px;
+		padding-left: 50%;
+		opacity: 0;
+		transform: scale(1.5, 1.5);
 	}
 	.drops-left {
 		position: absolute;
 		left: 0px;
 		top: 0px;
-		opacity: 0.0;
+		padding-top: 378px;
+		padding-left: 50%;
+		opacity: 0;
+		transform: translateX(-50%) scale(1.5, 1.5);
 	}
 	.drop {
 		position: absolute;
 		left: 50%;
 		top: 0px;
 		transform: translateX(-50%);
+		opacity: 1;
 	}
 </style>
 
@@ -163,6 +170,7 @@
 		<div class="water">
 			<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 			<svg
+			   preserveAspectRatio="none" 
 			   xmlns:dc="http://purl.org/dc/elements/1.1/"
 			   xmlns:cc="http://creativecommons.org/ns#"
 			   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -248,6 +256,7 @@
 		<div class="wave">
 			<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 			<svg
+			   preserveAspectRatio="none" 
 			   xmlns:dc="http://purl.org/dc/elements/1.1/"
 			   xmlns:cc="http://creativecommons.org/ns#"
 			   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -407,7 +416,7 @@
 				</svg>
 
 		</div>
-		<div class="drops-right">
+		<div class="drops-right drops-both">
 			<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 			<svg
 			   xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -444,7 +453,7 @@
 			     style="fill:rgb(76,201,197)" />
 			</svg>
 		</div>
-		<div class="drops-left">
+		<div class="drops-left drops-both">
 			<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 			<svg
 			   xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -472,9 +481,11 @@
 			  <defs
 			     id="defs5761" />
 			  <path
-			     id="path6309"
-			     d="M 0.09738899,46.25 C 0.37215999,45.2875 1.311296,41.575 2.184357,38 4.315422,29.273742 8.1328357,23.910927 13.561443,22.017132 c 3.772235,-1.315961 4.554246,-1.312479 6.947705,0.03094 8.598894,4.826435 1.912436,17.869816 -12.2790893,23.953014 -5.9231907,2.538976 -8.81166571,2.627384 -8.13266971,0.248919 z M 51.73258,37.707568 c 0,-2.422794 4.70482,-7.417986 7.48786,-7.949998 3.11354,-0.59519 6.05172,1.393932 5.22836,3.539555 -0.88222,2.299037 -4.95782,4.705545 -9.11045,5.379424 -2.84527,0.461724 -3.60577,0.257354 -3.60577,-0.968981 z m -36,-31.0615446 C 15.73258,4.765332 20.316657,0 22.125814,0 c 4.080389,0 2.850936,5.3706304 -1.583317,6.9164194 -4.04401,1.409749 -4.809917,1.366693 -4.809917,-0.270396 z"
-			     style="fill:rgb(76,201,197)" />
+     id="path6309"
+     d="M 64.491692,46.25 C 64.216921,45.2875 63.277785,41.575 62.404724,38 60.273659,29.273742 56.456246,23.910927 51.027638,22.017132 c -3.772235,-1.315961 -4.554246,-1.312479 -6.947705,0.03094 -8.598894,4.826435 -1.912436,17.869816 12.27909,23.953014 5.92319,2.538976 8.811665,2.627384 8.132669,0.248919 z M 12.856501,37.707568 c 0,-2.422794 -4.7048197,-7.417986 -7.4878597,-7.949998 -3.11354,-0.59519 -6.05171996,1.393932 -5.22835996,3.539555 0.88221996,2.299037 4.95781996,4.705545 9.11044996,5.379424 2.8452697,0.461724 3.6057697,0.257354 3.6057697,-0.968981 z m 36,-31.0615446 C 48.856501,4.765332 44.272424,0 42.463267,0 c -4.080389,0 -2.850936,5.3706304 1.583317,6.9164194 4.04401,1.409749 4.809917,1.366693 4.809917,-0.270396 z"
+     style="fill:rgb(76,201,197)"
+     inkscape:connector-curvature="0" />
+  <path
 			  <path
 			     id="path6307"
 			     d=""
