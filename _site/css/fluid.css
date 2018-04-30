@@ -210,6 +210,14 @@ svg {
 .zoomable-image {
   cursor: zoom-in; }
 
+.footer-content {
+  position: absolute;
+  width: 100%;
+  bottom: 20%; }
+  .footer-content p {
+    text-align: center;
+    color: white; }
+
 .site-header {
   border-top: none;
   border-bottom: none; }

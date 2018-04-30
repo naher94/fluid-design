@@ -290,6 +290,16 @@ svg{
   cursor: zoom-in;
 }
 
+.footer-content{
+  position: absolute;
+  width: 100%;
+  bottom: 20%;
+  p{
+    text-align: center;
+    color: white;
+  }
+}
+
 //****** header wave stuff
 
 //****** foundation overrides
