@@ -213,11 +213,16 @@ svg {
   border-top: none; }
 
 @media screen and (max-width: 40em) {
-  .feature-image {
-    padding-left: 20px;
-    padding-right: 20px; }
+  .feature-tile .feature-image {
+    padding-left: 10px;
+    padding-right: 10px; }
 
   p {
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 18px; } }
+    font-size: 18px; }
+
+  .message-bubble {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px; } }
