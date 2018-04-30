@@ -213,7 +213,8 @@ svg {
 .footer-content {
   position: absolute;
   width: 100%;
-  bottom: 20%; }
+  bottom: 20%;
+  z-index: 2; }
   .footer-content p {
     text-align: center;
     color: white; }
