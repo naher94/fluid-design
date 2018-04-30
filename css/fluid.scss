@@ -310,6 +310,17 @@ svg{
   }
 }
 
+.no-select{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+}
+
 //****** header wave stuff
 
 //****** foundation overrides

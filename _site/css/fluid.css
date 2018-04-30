@@ -226,6 +226,16 @@ svg {
     max-width: 200px;
     margin-top: 50px; }
 
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none; }
+
 .site-header {
   border-top: none;
   border-bottom: none; }
