@@ -94,6 +94,8 @@ section{
   padding-bottom: 10px;
   border-radius: 30px;
   margin-bottom: 50px;
+  opacity: 0.0;
+  transform: translateX(250px);
 }
 
 .workshop{
@@ -283,6 +285,11 @@ svg{
   stroke: url(#linear);
   /*stroke: #F79868;*/
 }
+
+.zoomable-image {
+  cursor: zoom-in;
+}
+
 //****** header wave stuff
 
 //****** foundation overrides

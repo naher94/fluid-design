@@ -1,12 +1,40 @@
 window.addEventListener('load', function() {
-	$(window).scroll(function() {
-        //console.log($(window).scrollTop())
-        //console.log($('.splash').position().top)
+	
+	var messageBubbles = document.getElementsByClassName('message-bubble');
+	for(var i = 0; i < messageBubbles.length; i++) {
+		(function (ii) {
+			var m = messageBubbles[ii];
 
-        var x = basicTimeline.duration * ($('.splash').position().top + ($('.splash').height()/4) - $(window).scrollTop())/400;
-        console.log(x)
-		basicTimeline.seek(basicTimeline.duration-x)
-    });
+			var t = anime.timeline();
+			t.autoplay = false;
+			t.add({
+				targets: m,
+				easing: 'easeOutQuad',
+				opacity: 0,
+			    offset: -1000,
+			    translateX: (m.className.includes('right-message') ? '-' : '') + '500px',
+			    duration: 999,
+			});
+			t.add({
+				targets: m,
+				easing: 'easeOutQuad',
+				opacity: 1,
+			    offset: 0,
+			    translateX: '0px',
+			    duration: 1000,
+			});
+
+			$(window).scroll(function() {
+		        var x = t.duration * ($(m).position().top - window.innerHeight/2 - $(window).scrollTop())/300;
+				t.seek(t.duration-x);
+		    });
+		})(i)
+	}
+
+	/*document.body.addEventListener('mousemove', function (e) {
+		var x = t.duration * (e.x/window.innerWidth);
+		t.seek(x);
+	})*/
 
 	var el = document.querySelector('#domNode .el');
 
@@ -20,6 +48,10 @@ window.addEventListener('load', function() {
 	  loop: true
 	});
 
+	$(window).scroll(function() {
+        var x = basicTimeline.duration * ($('.splash').position().top + ($('.splash').height()/4) - $(window).scrollTop())/400;
+		basicTimeline.seek(basicTimeline.duration-x)
+    });
 	var basicTimeline = anime.timeline();
 	basicTimeline.autoplay = false;
 	basicTimeline

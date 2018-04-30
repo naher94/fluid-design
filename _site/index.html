@@ -33,6 +33,10 @@
   <script src="../js/anime.min.js"></script>
   <script src="../js/jquery-3.3.1.min.js"></script>
   <script src="../js/fluid-design-animations.js"></script>
+  <script src="../js/image-zoomer.js"></script>
+
+  <link  href="../js/viewer.css" rel="stylesheet">
+  <script src="../js/viewer.js"></script>
 </head>
 
 
@@ -239,7 +243,7 @@
   <div class="small-12 medium-9 medium-centered columns">
     <h2>Chatbot</h2>
   </div>
-  <img src="img/jasperflow.png" alt="Chatbot Conversation Flow">
+  <img class="zoomable-image" src="img/jasperflow.png" alt="Chatbot Conversation Flow">
 </section>
 
 <section class="row">
@@ -251,18 +255,18 @@
   </div>
   <div class="small-12 columns">
     <div class="small-12 medium-5 columns">
-      <img src="img/breakpointcallout.svg" alt="Breakpoint Bar Prototype Callout">
+      <img class="zoomable-image" src="img/breakpointcallout.svg" alt="Breakpoint Bar Prototype Callout">
     </div>
     <div class="small-12 medium-7 columns">
-      <img src="img/breakpointbar.png" alt="Breakpoint Bar Prototype Callout">
+      <img class="zoomable-image" src="img/breakpointbar.png" alt="Breakpoint Bar Prototype Callout">
     </div>
   </div>
   <div style="margin-bottom: 100px;" class="small-12 columns">
     <div class="small-12 medium-5 columns">
-      <img src="img/autosizecallout.svg" alt="Autosize Callout">
+      <img class="zoomable-image" src="img/autosizecallout.svg" alt="Autosize Callout">
     </div>
     <div class="small-12 medium-7 columns">
-      <img src="img/autosize.png" alt="Autosize Prototype Callout">
+      <img class="zoomable-image" src="img/autosize.png" alt="Autosize Prototype Callout">
     </div>
   </div>
   <div class="small-12 columns">
@@ -271,7 +275,7 @@
       <p class="application-name">Axure RP</p>
     </div>
     <div class="small-12 medium-9 medium-centered columns">
-      <img src="img/axureadaptive.png" alt="Axure Adaptive View">
+      <img class="zoomable-image" src="img/axureadaptive.png" alt="Axure Adaptive View">
       <p>The issue with both of my prototypes is that they only take into consideration screen based interfaces and only screen size rather than more environmental considerations such as touch vs mouse and keyboard. As these prototypes do not take into consideration non-screen based interfaces such as voice, I went back to the drawing board and revisited a typical design process to guide my next steps. Interaction flows as being a good place to start as they are clear in terms of what the user should be doing but are still abstract because they leave out the platform they work on.</p>
     </div>
     <div class="small-12 columns empty"></div>
@@ -343,30 +347,30 @@
     </div>
   </div>
   <div style="margin-bottom: 50px;" class="image-container">
-    <img src="img/postitflows.png" alt="Post-it Flows">
+    <img class="zoomable-image" src="img/postitflows.png" alt="Post-it Flows">
   </div>
     
   <div class="small-12 columns">
-    <div class="message-bubble small-11 medium-8">
+    <div class="left-message message-bubble small-11 medium-8">
       <p>I am more likely to buy when using voice and browse on my phone.</p>
     </div>
   </div>
   <div class="small-12 columns">
-    <div class="message-bubble small-11 small-offset-1 medium-8 medium-offset-4">
+    <div class="right-message message-bubble small-11 small-offset-1 medium-8 medium-offset-4">
       <p>Payment on voice would be strange for a first time [purchase]</p>
     </div>
   </div>
   <div class="small-12 columns">
-    <div class="message-bubble small-11 medium-8">
+    <div class="left-message message-bubble small-11 medium-8">
       <p>why don’t I use both platforms together?</p>
     </div>
   </div>
   <div class="small-12 columns">
-    <div class="message-bubble small-11 medium-8">
+    <div class="left-message message-bubble small-11 medium-8">
       <p>voice and mobile [used together] could be a great experience?</p>
     </div>
   </div>
-  <img style="margin-bottom: 50px;" src="img/workshoppeople.png" alt="Workshop Process Photos">
+  <img style="margin-bottom: 50px;" class="zoomable-image" src="img/workshoppeople.png" alt="Workshop Process Photos">
 
   <div class="small-12 medium-9 medium-centered columns">
     <h3>Fluid Material</h3>
@@ -401,7 +405,7 @@
       </div>
       <div class="small-4 columns">
         <div class="workshop pizza">
-          <div class="image-container"><img src="img/pizzaicon.svg" alt="Pizza Icon"></div>
+          <div class="image-container zoomable-image"><img src="img/pizzaicon.svg" alt="Pizza Icon"></div>
         </div>
         <p class="application-name">Pizza Order</p>
       </div>
@@ -411,10 +415,10 @@
     <h3>Rideshare Experience</h3>
   </div>
   <div class="small-12 columns">
-    <img class="image-spacing" src="img/rideshareinteractionflow1.svg" alt="Rideshare Interaction Flow First Pass">
-    <img class="image-spacing" src="img/rideshareinteractionflow2.svg" alt="Rideshare Interaction Flow Final Pass">
-    <img class="image-spacing" src="img/ridesharescreens.png" alt="Rideshare Propagation to Screen">
-    <img class="image-spacing" src="img/ridesharevoice.svg" alt="Rideshare Propagation to Voice">
+    <img class="image-spacing zoomable-image" src="img/rideshareinteractionflow1.svg" alt="Rideshare Interaction Flow First Pass">
+    <img class="image-spacing zoomable-image" src="img/rideshareinteractionflow2.svg" alt="Rideshare Interaction Flow Final Pass">
+    <img class="image-spacing zoomable-image" src="img/ridesharescreens.png" alt="Rideshare Propagation to Screen">
+    <img class="image-spacing zoomable-image" src="img/ridesharevoice.svg" alt="Rideshare Propagation to Voice">
   </div>
   
   <div class="small-12 medium-9 medium-centered columns">
@@ -422,44 +426,44 @@
   </div>
   <div class="small-12 columns">
     <img class="image-spacing" src="img/movieinteractionflow.svg" alt="Movie Interaction Flow">
-    <img class="image-spacing" src="img/moviescreens.png" alt="Movie Propagation to Screen">
-    <img class="image-spacing" src="img/movievoice.svg" alt="Movie Propagation to Voice">
+    <img class="image-spacing zoomable-image" src="img/moviescreens.png" alt="Movie Propagation to Screen">
+    <img class="image-spacing zoomable-image" src="img/movievoice.svg" alt="Movie Propagation to Voice">
   </div>
   
   <div class="small-12 medium-9 medium-centered columns">
     <h3>Pizza Order Experience</h3>
   </div>
   <div class="small-12 columns">
-    <img class="image-spacing" src="img/pizzainteractionflow.svg" alt="Pizza Interaction Flow">
-    <img class="image-spacing" src="img/pizzascreens.png" alt="Pizza Propagation to Screen">
-    <img style="margin-bottom: 50px;" class="image-spacing" src="img/pizzavoice.svg" alt="Pizza Propagation to Voice">
+    <img class="image-spacing zoomable-image" src="img/pizzainteractionflow.svg" alt="Pizza Interaction Flow">
+    <img class="image-spacing zoomable-image" src="img/pizzascreens.png" alt="Pizza Propagation to Screen">
+    <img style="margin-bottom: 50px;" class="zoomable-image image-spacing" src="img/pizzavoice.svg" alt="Pizza Propagation to Voice">
   </div>
   <div class="small-12 medium-9 medium-centered columns">
     <h3 style="margin-bottom: 50px;">User Feedback</h3>
   </div>
   <div class="small-12 columns">
-    <div class="message-bubble small-11 medium-8">
+    <div class="left-message message-bubble small-11 medium-8">
       <p>"The application functions in a logical order and provides good feedback"</p>
     </div>
   </div>
   
   <div class="small-12 columns">
-    <div class="message-bubble small-11 small-offset-1 medium-8 medium-offset-4">
+    <div class="right-message message-bubble small-11 small-offset-1 medium-8 medium-offset-4">
       <p>“speaking is far more natural”</p>
     </div>
   </div>
   <div class="small-12 columns">
-    <div class="message-bubble small-11 medium-8">
+    <div class="left-message message-bubble small-11 medium-8">
       <p>"An exit or escape once the ride has been ordered needs to be added"</p>
     </div>
   </div>
   <div class="small-12 columns">
-    <div class="message-bubble small-11 small-offset-1 medium-8 medium-offset-4">
+    <div class="right-message message-bubble small-11 small-offset-1 medium-8 medium-offset-4">
       <p>“Much slower than on the phone unless it was to repeat order, the process was too long”</p>
     </div>
   </div>
   <div style="margin-bottom: 50px;" class="small-12 columns">
-    <div class="message-bubble small-11 medium-8">
+    <div class="left-message message-bubble small-11 medium-8">
       <p>"Can I check the status on my phone after the request from voice?"</p>
     </div>
   </div>
@@ -476,6 +480,875 @@
     <h2>Fluid Design Tool</h2>
     <div class="image-container fluid-app-icon"><img src="img/fluidappicon.png" alt="Fluid Design Application Icon"></div>
   </div>
+  <style>
+	.devices {
+		background-color: white;
+		width: 100%;
+		height: 1000px;
+		overflow: hidden;
+		position: relative;
+	}
+	.devices-box {
+		position: absolute;
+	}
+	.devices-arrows {
+		position: absolute;
+	}	
+	.devices-screens {
+		position: absolute;
+	}
+	.devices-screens-gray {
+		position: absolute;
+		opacity: 1;
+	}
+	.devices-bodies {
+		position: absolute;
+	}
+	.devices-arrow-cover {
+		position: absolute;
+		bottom: 0%;
+		width: 100%;
+		height: 100%;
+		transform: scaleX(1) scaleY(0.7);
+		background-color: #ffffff;
+		opacity: 0.7;
+		transform-origin: 0% 100%;
+	}
+</style>
+
+<script>
+	window.addEventListener('load', function() {
+		var basicTimeline = anime.timeline();
+		basicTimeline.autoplay = false;
+
+		$(window).scroll(function() {
+			var top = $('.devices').position().top
+			var height = $('.devices').height();
+			var scroll = $(window).scrollTop();
+			var speed = 600;
+	        var x = basicTimeline.duration * ((top + (height/4)) - scroll)/speed;
+			basicTimeline.seek(basicTimeline.duration-x)
+	    });
+
+		var allthings = [];
+		$('#svg3 rect').each(function (i,v) {
+			allthings.push(v)
+		})
+		$('#svg3 path').each(function (i,v) {
+			allthings.push(v)
+		})
+
+		basicTimeline.add({
+			targets: '.devices-arrow-cover',
+			easing: 'linear',
+			offset: 0,
+			duration: 250,
+			scaleX: 1,
+			scaleY: 0.5,
+		});
+		for(var i =0;i<allthings.length;i++) {
+			var t = allthings[i];
+			basicTimeline.add({
+				targets: '#svg3 #'+t.id,
+				easing: 'linear',
+				opacity: 0,
+				offset: 150+(i*3),
+				duration: 5,
+			});
+		}
+
+		/*basicTimeline.add({
+			targets: '.devices-screens-gray rect',
+			easing: 'easeOutExpo',
+			opacity: 0,
+			offset: 0,
+			duration: 100,
+		});
+		basicTimeline.add({
+			targets: '.devices-screens-gray path',
+			easing: 'easeOutExpo',
+			opacity: 0,
+			offset: 0,
+			duration: 100,
+		});*/
+
+	});
+</script>
+
+<body>
+<div class="devices">
+	<div class="devices-box">
+		
+	</div><!-- devices-box-->
+
+	<div class="devices-arrows">
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+		<svg
+		   style="width: 100%;"
+		   xmlns:dc="http://purl.org/dc/elements/1.1/"
+		   xmlns:cc="http://creativecommons.org/ns#"
+		   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		   xmlns:svg="http://www.w3.org/2000/svg"
+		   xmlns="http://www.w3.org/2000/svg"
+		   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+		   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+		   width="1210px"
+		   height="748px"
+		   viewBox="0 0 1210 748"
+		   version="1.1"
+		   id="svg2"
+		   inkscape:version="0.91 r13725"
+		   sodipodi:docname="device-arrows.svg">
+		  <metadata
+		     id="metadata88">
+		    <rdf:RDF>
+		      <cc:Work
+		         rdf:about="">
+		        <dc:format>image/svg+xml</dc:format>
+		        <dc:type
+		           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		        <dc:title>Fluid Design</dc:title>
+		      </cc:Work>
+		    </rdf:RDF>
+		  </metadata>
+		  <sodipodi:namedview
+		     pagecolor="#ffffff"
+		     bordercolor="#666666"
+		     borderopacity="1"
+		     objecttolerance="10"
+		     gridtolerance="10"
+		     guidetolerance="10"
+		     inkscape:pageopacity="0"
+		     inkscape:pageshadow="2"
+		     inkscape:window-width="1109"
+		     inkscape:window-height="733"
+		     id="namedview86"
+		     showgrid="false"
+		     inkscape:zoom="0.51239669"
+		     inkscape:cx="597.76198"
+		     inkscape:cy="350.56177"
+		     inkscape:window-x="0"
+		     inkscape:window-y="0"
+		     inkscape:window-maximized="0"
+		     inkscape:current-layer="svg2" />
+		  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+		  <title
+		     id="title4">Fluid Design</title>
+		  <desc
+		     id="desc6">Created with Sketch.</desc>
+		  <defs
+		     id="defs8">
+		    <rect
+		       id="path-1"
+		       x="0"
+		       y="0"
+		       width="73"
+		       height="129"
+		       rx="7" />
+		    <path
+		       d="M35,29 L74.1835479,14.8997292 L80.9219285,92.9015963 C81.7716443,107.999399 80.1455058,118.319183 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C0.995140228,118.319183 -0.630998313,107.999399 0.218717533,92.9015963 L6.14064603,29 L35,29 Z"
+		       id="path-3" />
+		    <path
+		       d="M0.0767384578,96 L81.0639076,96 C81.5320111,109.419881 79.8585462,118.706864 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C1.28209987,118.706864 -0.391365028,109.419881 0.0767384578,96 Z"
+		       id="path-4" />
+		    <ellipse
+		       id="path-5"
+		       cx="40.2014903"
+		       cy="22.2432513"
+		       rx="34.7865841"
+		       ry="14.6986825" />
+		  </defs>
+		  <rect
+		     style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     rx="9"
+		     height="18"
+		     width="18"
+		     y="182"
+		     x="596"
+		     id="Rectangle-9-Copy" />
+		  <path
+		     d="m 605,193 0,28.57194 c 0,11.04569 -8.9543,20 -20,20 l -324,0 c -11.0457,0 -20,8.9543 -20,20 L 241,306"
+		     id="Path-3"
+		     inkscape:connector-curvature="0"
+		     style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:4;stroke-linecap:round" />
+		  <path
+		     d="m 604.96368,193 0.0726,113"
+		     id="path76"
+		     inkscape:connector-curvature="0"
+		     style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:4;stroke-linecap:round" />
+		  <path
+		     d="m 605,193 0,28.57194 c 0,11.04569 8.9543,20 20,20 l 174,0 c 11.0457,0 20,8.9543 20,20 L 819,306"
+		     id="path78"
+		     inkscape:connector-curvature="0"
+		     style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:4;stroke-linecap:round" />
+		  <path
+		     d="m 605,193 0,28.57194 c 0,11.04569 8.9543,20 20,20 l 395,0 c 11.0457,0 20,8.9543 20,20 L 1040,306"
+		     id="path80"
+		     inkscape:connector-curvature="0"
+		     style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:4;stroke-linecap:round" />
+		  <path
+		     d="m 238.93832,323.63791 -12.44717,-18.99354 c -0.90816,-1.38579 -0.52097,-3.2454 0.86482,-4.15356 C 227.84461,300.17058 228.41612,300 229.00034,300 l 24.89436,0 c 1.65685,0 3,1.34315 3,3 0,0.58422 -0.17059,1.15573 -0.49081,1.64437 l -12.44718,18.99354 c -0.90816,1.38579 -2.76777,1.77298 -4.15356,0.86482 -0.3446,-0.22583 -0.63899,-0.52022 -0.86483,-0.86482 z"
+		     id="Triangle"
+		     inkscape:connector-curvature="0"
+		     style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 601.93833,323.63791 -12.44718,-18.99354 c -0.90816,-1.38579 -0.52097,-3.2454 0.86482,-4.15356 C 590.84461,300.17058 591.41612,300 592.00034,300 l 24.89436,0 c 1.65685,0 3,1.34315 3,3 0,0.58422 -0.17059,1.15573 -0.49081,1.64437 l -12.44718,18.99354 c -0.90816,1.38579 -2.76777,1.77298 -4.15356,0.86482 -0.3446,-0.22583 -0.63899,-0.52022 -0.86482,-0.86482 z"
+		     id="Triangle-Copy"
+		     inkscape:connector-curvature="0"
+		     style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 816.93832,323.63791 -12.44717,-18.99354 c -0.90816,-1.38579 -0.52097,-3.2454 0.86482,-4.15356 C 805.84461,300.17058 806.41612,300 807.00034,300 l 24.89436,0 c 1.65685,0 3,1.34315 3,3 0,0.58422 -0.17059,1.15573 -0.49081,1.64437 l -12.44718,18.99354 c -0.90816,1.38579 -2.76777,1.77298 -4.15356,0.86482 -0.3446,-0.22583 -0.63899,-0.52022 -0.86483,-0.86482 z"
+		     id="Triangle-Copy-2"
+		     inkscape:connector-curvature="0"
+		     style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 1037.9383,323.63791 -12.4472,-18.99354 c -0.9081,-1.38579 -0.5209,-3.2454 0.8649,-4.15356 0.4886,-0.32023 1.0601,-0.49081 1.6443,-0.49081 l 24.8944,0 c 1.6569,0 3,1.34315 3,3 0,0.58422 -0.1706,1.15573 -0.4908,1.64437 l -12.4472,18.99354 c -0.9081,1.38579 -2.7678,1.77298 -4.1535,0.86482 -0.3446,-0.22583 -0.639,-0.52022 -0.8649,-0.86482 z"
+		     id="Triangle-Copy-3"
+		     inkscape:connector-curvature="0"
+		     style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		</svg>
+
+	</div><!-- devices-arrows-->
+
+	<div class="devices-arrow-cover">
+		
+	</div>
+
+	<div class="devices-bodies">
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+		<svg
+		style="width: 100%;"
+		   xmlns:dc="http://purl.org/dc/elements/1.1/"
+		   xmlns:cc="http://creativecommons.org/ns#"
+		   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		   xmlns:svg="http://www.w3.org/2000/svg"
+		   xmlns="http://www.w3.org/2000/svg"
+		   xmlns:xlink="http://www.w3.org/1999/xlink"
+		   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+		   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+		   width="1210px"
+		   height="748px"
+		   viewBox="0 0 1210 748"
+		   version="1.1"
+		   id="svg2"
+		   inkscape:version="0.91 r13725"
+		   sodipodi:docname="device-bodies.svg">
+		  <metadata
+		     id="metadata88">
+		    <rdf:RDF>
+		      <cc:Work
+		         rdf:about="">
+		        <dc:format>image/svg+xml</dc:format>
+		        <dc:type
+		           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		        <dc:title>Fluid Design</dc:title>
+		      </cc:Work>
+		    </rdf:RDF>
+		  </metadata>
+		  <sodipodi:namedview
+		     pagecolor="#ffffff"
+		     bordercolor="#666666"
+		     borderopacity="1"
+		     objecttolerance="10"
+		     gridtolerance="10"
+		     guidetolerance="10"
+		     inkscape:pageopacity="0"
+		     inkscape:pageshadow="2"
+		     inkscape:window-width="1109"
+		     inkscape:window-height="733"
+		     id="namedview86"
+		     showgrid="false"
+		     inkscape:zoom="0.51239669"
+		     inkscape:cx="523.60069"
+		     inkscape:cy="346.65855"
+		     inkscape:window-x="0"
+		     inkscape:window-y="0"
+		     inkscape:window-maximized="0"
+		     inkscape:current-layer="svg2" />
+		  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+		  <title
+		     id="title4">Fluid Design</title>
+		  <desc
+		     id="desc6">Created with Sketch.</desc>
+		  <defs
+		     id="defs8">
+		    <rect
+		       id="path-1"
+		       x="0"
+		       y="0"
+		       width="73"
+		       height="129"
+		       rx="7" />
+		    <path
+		       d="M35,29 L74.1835479,14.8997292 L80.9219285,92.9015963 C81.7716443,107.999399 80.1455058,118.319183 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C0.995140228,118.319183 -0.630998313,107.999399 0.218717533,92.9015963 L6.14064603,29 L35,29 Z"
+		       id="path-3" />
+		    <path
+		       d="M0.0767384578,96 L81.0639076,96 C81.5320111,109.419881 79.8585462,118.706864 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C1.28209987,118.706864 -0.391365028,109.419881 0.0767384578,96 Z"
+		       id="path-4" />
+		    <ellipse
+		       id="path-5"
+		       cx="40.2014903"
+		       cy="22.2432513"
+		       rx="34.7865841"
+		       ry="14.6986825" />
+		  </defs>
+		  <path
+		     d="m 61,671 0,-175 c 0,-11.0457 8.954305,-20 20,-20 l 318,0 c 11.0457,0 20,8.9543 20,20 l 0,175 17,0 c 4.97056,0 9,4.02944 9,9 l 0,15 c 0,5.52285 -4.47715,10 -10,10 l -390,0 c -5.522847,0 -10,-4.47715 -10,-10 l 0,-15 c 0,-4.97056 4.029437,-9 9,-9 l 17,0 z m 145,11 c -3.31371,0 -6,2.68629 -6,6 0,3.31371 2.68629,6 6,6 l 69,0 c 3.31371,0 6,-2.68629 6,-6 0,-3.31371 -2.68629,-6 -6,-6 l -69,0 z M 87,491 c -5.522847,0 -10,4.47715 -10,10 l 0,170 327,0 0,-170 c 0,-5.52285 -4.47715,-10 -10,-10 l -307,0 z"
+		     id="Combined-Shape"
+		     inkscape:connector-curvature="0"
+		     style="fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 801,573 -12,0 c -3.86599,0 -7,3.13401 -7,7 l 0,115 c 0,3.86599 3.13401,7 7,7 l 59,0 c 3.86599,0 7,-3.13401 7,-7 l 0,-115 c 0,-3.86599 -3.13401,-7 -7,-7 l -11,0 0,1 c 0,1.65685 -1.34315,3 -3,3 l -30,0 c -1.65685,0 -3,-1.34315 -3,-3 l 0,-1 z m -12,-3 59,0 c 5.52285,0 10,4.47715 10,10 l 0,115 c 0,5.52285 -4.47715,10 -10,10 l -59,0 c -5.52285,0 -10,-4.47715 -10,-10 l 0,-115 c 0,-5.52285 4.47715,-10 10,-10 z"
+		     id="Combined-Shape-Copy"
+		     inkscape:connector-curvature="0"
+		     style="fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 552,501 119,0 c 7.73199,0 14,6.26801 14,14 l 0,176 c 0,7.73199 -6.26801,14 -14,14 l -119,0 c -7.73199,0 -14,-6.26801 -14,-14 l 0,-176 c 0,-7.73199 6.26801,-14 14,-14 z m 0,11 c -2.20914,0 -4,1.79086 -4,4 l 0,160 c 0,2.20914 1.79086,4 4,4 l 119,0 c 2.20914,0 4,-1.79086 4,-4 l 0,-160 c 0,-2.20914 -1.79086,-4 -4,-4 l -119,0 z m 60,187 c 3.86599,0 7,-3.13401 7,-7 0,-3.86599 -3.13401,-7 -7,-7 -3.86599,0 -7,3.13401 -7,7 0,3.86599 3.13401,7 7,7 z"
+		     id="path38"
+		     inkscape:connector-curvature="0"
+		     style="fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <g
+		     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     id="Group-2"
+		     transform="translate(998,571)">
+		    <g
+		       id="g51">
+		      <use
+		         xlink:href="#path-3"
+		         id="use53"
+		         style="fill:#d8d8d8;fill-rule:evenodd"
+		         x="0"
+		         y="0"
+		         width="100%"
+		         height="100%" />
+		      <path
+		         d="m 7.5080435,30.5 -5.791696,62.485884 c -0.831673,14.777216 0.7469639,24.795546 4.5864354,29.982646 3.3579994,4.53664 8.1456501,8.31795 14.3846801,11.33932 l 25.453183,0 14.312537,0 c 6.23903,-3.02137 11.026681,-6.80268 14.38468,-11.33932 3.839472,-5.1871 5.418108,-15.20543 4.589631,-29.937833 L 72.856917,16.971284 35.261675,30.5 7.5080435,30.5 Z"
+		         id="path55"
+		         inkscape:connector-curvature="0"
+		         style="stroke:#ffffff;stroke-width:3" />
+		    </g>
+		    <g
+		       id="g57">
+		      <use
+		         xlink:href="#path-4"
+		         id="use59"
+		         style="fill:#d8d8d8;fill-rule:evenodd"
+		         x="0"
+		         y="0"
+		         width="100%"
+		         height="100%" />
+		      <path
+		         d="m 1.533368,97.5 c -0.291488,12.32675 1.3379097,20.83259 4.7694149,25.46853 3.3579994,4.53664 8.1456501,8.31795 14.3846801,11.33932 l 25.453183,0 14.312537,0 c 6.23903,-3.02137 11.026681,-6.80268 14.38468,-11.33932 3.431505,-4.63594 5.060903,-13.14178 4.769415,-25.46853 l -78.07391,0 z"
+		         id="path61"
+		         inkscape:connector-curvature="0"
+		         style="stroke:#ffffff;stroke-width:3" />
+		    </g>
+		    <g
+		       id="Oval-2"
+		       transform="matrix(0.97437006,-0.22495105,0.22495105,0.97437006,-3.9732812,9.6134606)">
+		      <use
+		         xlink:href="#path-5"
+		         id="use64"
+		         style="fill:#d8d8d8;fill-rule:evenodd"
+		         x="0"
+		         y="0"
+		         width="100%"
+		         height="100%" />
+		      <ellipse
+		         cx="40.201488"
+		         cy="22.243252"
+		         rx="33.286583"
+		         ry="13.198683"
+		         id="ellipse66"
+		         style="stroke:#ffffff;stroke-width:3" />
+		    </g>
+		  </g>
+		</svg>
+	</div><!-- devices-bodies-->
+
+	<div class="devices-screens-gray">
+		
+	</div><!-- devices-screens-gray-->
+
+	<div class="devices-screens">
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+		<svg
+		style="width: 100%;"
+		   xmlns:dc="http://purl.org/dc/elements/1.1/"
+		   xmlns:cc="http://creativecommons.org/ns#"
+		   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		   xmlns:svg="http://www.w3.org/2000/svg"
+		   xmlns="http://www.w3.org/2000/svg"
+		   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+		   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+		   width="1210px"
+		   height="748px"
+		   viewBox="0 0 1210 748"
+		   version="1.1"
+		   id="svg2"
+		   inkscape:version="0.91 r13725"
+		   sodipodi:docname="device-screens.svg">
+		  <metadata
+		     id="metadata88">
+		    <rdf:RDF>
+		      <cc:Work
+		         rdf:about="">
+		        <dc:format>image/svg+xml</dc:format>
+		        <dc:type
+		           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		        <dc:title>Fluid Design</dc:title>
+		      </cc:Work>
+		    </rdf:RDF>
+		  </metadata>
+		  <sodipodi:namedview
+		     pagecolor="#ffffff"
+		     bordercolor="#666666"
+		     borderopacity="1"
+		     objecttolerance="10"
+		     gridtolerance="10"
+		     guidetolerance="10"
+		     inkscape:pageopacity="0"
+		     inkscape:pageshadow="2"
+		     inkscape:window-width="1109"
+		     inkscape:window-height="733"
+		     id="namedview86"
+		     showgrid="false"
+		     inkscape:zoom="0.51239669"
+		     inkscape:cx="593.42091"
+		     inkscape:cy="361.76918"
+		     inkscape:window-x="0"
+		     inkscape:window-y="0"
+		     inkscape:window-maximized="0"
+		     inkscape:current-layer="svg2" />
+		  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+		  <title
+		     id="title4">Fluid Design</title>
+		  <desc
+		     id="desc6">Created with Sketch.</desc>
+		  <defs
+		     id="defs8">
+		    <rect
+		       id="path-1"
+		       x="0"
+		       y="0"
+		       width="73"
+		       height="129"
+		       rx="7" />
+		    <path
+		       d="M35,29 L74.1835479,14.8997292 L80.9219285,92.9015963 C81.7716443,107.999399 80.1455058,118.319183 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C0.995140228,118.319183 -0.630998313,107.999399 0.218717533,92.9015963 L6.14064603,29 L35,29 Z"
+		       id="path-3" />
+		    <path
+		       d="M0.0767384578,96 L81.0639076,96 C81.5320111,109.419881 79.8585462,118.706864 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C1.28209987,118.706864 -0.391365028,109.419881 0.0767384578,96 Z"
+		       id="path-4" />
+		    <ellipse
+		       id="path-5"
+		       cx="40.2014903"
+		       cy="22.2432513"
+		       rx="34.7865841"
+		       ry="14.6986825" />
+		  </defs>
+		  <rect
+		     id="Rectangle-6"
+		     x="90"
+		     y="508"
+		     width="89"
+		     height="33"
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy"
+		     x="184"
+		     y="508"
+		     width="206"
+		     height="33"
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-2"
+		     x="90"
+		     y="546"
+		     width="300"
+		     height="56"
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-3"
+		     x="90"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-4"
+		     x="294"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-5"
+		     x="192"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-6"
+		     x="555"
+		     y="518"
+		     width="33"
+		     height="19"
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-7"
+		     x="590"
+		     y="518"
+		     width="78"
+		     height="19"
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-8"
+		     x="555"
+		     y="539"
+		     width="113"
+		     height="54"
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-9"
+		     x="555"
+		     y="595"
+		     width="36"
+		     height="54"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-12"
+		     x="555"
+		     y="651"
+		     width="113"
+		     height="27"
+		     style="fill:#e986e0;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-10"
+		     x="632"
+		     y="595"
+		     width="36"
+		     height="54"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-11"
+		     x="593"
+		     y="595"
+		     width="37"
+		     height="54"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 1125.1223,406.91987 3.3777,8.10504 c -6.916,-3.14422 -11.494,-5.03665 -13.7342,-5.67729 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.17381 C 1000,390.4504 1005.4504,385 1012.1738,385 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.17381 0,3.98649 -1.9161,7.52543 -4.8777,9.74606 z"
+		     id="path68"
+		     inkscape:connector-curvature="0"
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 1125.1223,533.91987 3.3777,8.10504 c -6.916,-3.14422 -11.494,-5.03665 -13.7342,-5.67729 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.17381 C 1000,517.4504 1005.4504,512 1012.1738,512 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.17381 0,3.98649 -1.9161,7.52543 -4.8777,9.74606 z"
+		     id="Combined-Shape-Copy-3"
+		     inkscape:connector-curvature="0"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Combined-Shape-Copy-2"
+		     transform="scale(-1,1)"
+		     x="-1081"
+		     y="420"
+		     width="130"
+		     height="24"
+		     rx="12"
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Combined-Shape-Copy-5"
+		     transform="scale(-1,1)"
+		     x="-1130"
+		     y="485"
+		     width="130"
+		     height="24"
+		     rx="12"
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 955.87768,468.91987 -3.37767,8.10504 c 6.91597,-3.14422 11.49402,-5.03665 13.73417,-5.67729 l 102.59202,0 c 6.7234,0 12.1738,-5.4504 12.1738,-12.17381 C 1081,452.4504 1075.5496,447 1068.8262,447 l -105.65239,0 C 956.4504,447 951,452.4504 951,459.17381 c 0,3.98649 1.91615,7.52543 4.87768,9.74606 z"
+		     id="Combined-Shape-Copy-4"
+		     inkscape:connector-curvature="0"
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="19"
+		     width="18.362904"
+		     y="581.47992"
+		     x="786.83978"
+		     id="rect4321" />
+		  <rect
+		     style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="19"
+		     width="41.430035"
+		     y="581.47992"
+		     x="807.83978"
+		     id="rect4323" />
+		  <rect
+		     style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="54"
+		     width="62.285046"
+		     y="602.47992"
+		     x="786.83978"
+		     id="rect4325" />
+		  <rect
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="38.130016"
+		     width="36"
+		     y="658.47992"
+		     x="786.83978"
+		     id="rect4327" />
+		  <rect
+		     style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="37.440014"
+		     width="24.235012"
+		     y="658.47992"
+		     x="824.83978"
+		     id="rect4333" />
+		</svg>
+	</div><!-- devices-screens-->
+	<div class="devices-screens-gray">
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+		<svg
+		   style="width: 100%;"
+		   xmlns:dc="http://purl.org/dc/elements/1.1/"
+		   xmlns:cc="http://creativecommons.org/ns#"
+		   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		   xmlns:svg="http://www.w3.org/2000/svg"
+		   xmlns="http://www.w3.org/2000/svg"
+		   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+		   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+		   width="1210px"
+		   height="748px"
+		   viewBox="0 0 1210 748"
+		   version="1.1"
+		   id="svg3"
+		   inkscape:version="0.91 r13725"
+		   sodipodi:docname="device-screens-gray.svg">
+		  <metadata
+		     id="metadata88">
+		    <rdf:RDF>
+		      <cc:Work
+		         rdf:about="">
+		        <dc:format>image/svg+xml</dc:format>
+		        <dc:type
+		           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		        <dc:title>Fluid Design</dc:title>
+		      </cc:Work>
+		    </rdf:RDF>
+		  </metadata>
+		  <sodipodi:namedview
+		     pagecolor="#ffffff"
+		     bordercolor="#666666"
+		     borderopacity="1"
+		     objecttolerance="10"
+		     gridtolerance="10"
+		     guidetolerance="10"
+		     inkscape:pageopacity="0"
+		     inkscape:pageshadow="2"
+		     inkscape:window-width="1109"
+		     inkscape:window-height="733"
+		     id="namedview86"
+		     showgrid="false"
+		     inkscape:zoom="0.51239669"
+		     inkscape:cx="699.24585"
+		     inkscape:cy="297.86822"
+		     inkscape:window-x="0"
+		     inkscape:window-y="0"
+		     inkscape:window-maximized="0"
+		     inkscape:current-layer="svg2" />
+		  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+		  <title
+		     id="title4">Fluid Design</title>
+		  <desc
+		     id="desc6">Created with Sketch.</desc>
+		  <defs
+		     id="defs8">
+		    <rect
+		       id="path-1"
+		       x="0"
+		       y="0"
+		       width="73"
+		       height="129"
+		       rx="7" />
+		    <path
+		       d="M35,29 L74.1835479,14.8997292 L80.9219285,92.9015963 C81.7716443,107.999399 80.1455058,118.319183 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C0.995140228,118.319183 -0.630998313,107.999399 0.218717533,92.9015963 L6.14064603,29 L35,29 Z"
+		       id="path-3" />
+		    <path
+		       d="M0.0767384578,96 L81.0639076,96 C81.5320111,109.419881 79.8585462,118.706864 76.0435129,123.860948 C72.4768556,128.679478 67.3939638,132.661778 60.7948376,135.807846 L46.140646,135.807846 L20.3458084,135.807846 C13.7466822,132.661778 8.66379048,128.679478 5.09713316,123.860948 C1.28209987,118.706864 -0.391365028,109.419881 0.0767384578,96 Z"
+		       id="path-4" />
+		    <ellipse
+		       id="path-5"
+		       cx="40.2014903"
+		       cy="22.2432513"
+		       rx="34.7865841"
+		       ry="14.6986825" />
+		  </defs>
+		  <rect
+		     id="Rectangle-6"
+		     x="90"
+		     y="508"
+		     width="89"
+		     height="33"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy"
+		     x="184"
+		     y="508"
+		     width="206"
+		     height="33"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-2"
+		     x="90"
+		     y="546"
+		     width="300"
+		     height="56"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-3"
+		     x="90"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-4"
+		     x="294"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-5"
+		     x="192"
+		     y="607"
+		     width="96"
+		     height="56"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-6"
+		     x="555"
+		     y="518"
+		     width="33"
+		     height="19"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-7"
+		     x="590"
+		     y="518"
+		     width="78"
+		     height="19"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-8"
+		     x="555"
+		     y="539"
+		     width="113"
+		     height="54"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-9"
+		     x="555"
+		     y="595"
+		     width="36"
+		     height="54"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-12"
+		     x="555"
+		     y="651"
+		     width="113"
+		     height="27"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-10"
+		     x="632"
+		     y="595"
+		     width="36"
+		     height="54"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Rectangle-6-Copy-11"
+		     x="593"
+		     y="595"
+		     width="37"
+		     height="54"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 1125.1223,406.91987 3.3777,8.10504 c -6.916,-3.14422 -11.494,-5.03665 -13.7342,-5.67729 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.17381 C 1000,390.4504 1005.4504,385 1012.1738,385 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.17381 0,3.98649 -1.9161,7.52543 -4.8777,9.74606 z"
+		     id="path68"
+		     inkscape:connector-curvature="0"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 1125.1223,533.91987 3.3777,8.10504 c -6.916,-3.14422 -11.494,-5.03665 -13.7342,-5.67729 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.17381 C 1000,517.4504 1005.4504,512 1012.1738,512 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.17381 0,3.98649 -1.9161,7.52543 -4.8777,9.74606 z"
+		     id="Combined-Shape-Copy-3"
+		     inkscape:connector-curvature="0"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Combined-Shape-Copy-2"
+		     transform="scale(-1,1)"
+		     x="-1081"
+		     y="420"
+		     width="130"
+		     height="24"
+		     rx="12"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     id="Combined-Shape-Copy-5"
+		     transform="scale(-1,1)"
+		     x="-1130"
+		     y="485"
+		     width="130"
+		     height="24"
+		     rx="12"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <path
+		     d="m 955.87768,468.91987 -3.37767,8.10504 c 6.91597,-3.14422 11.49402,-5.03665 13.73417,-5.67729 l 102.59202,0 c 6.7234,0 12.1738,-5.4504 12.1738,-12.17381 C 1081,452.4504 1075.5496,447 1068.8262,447 l -105.65239,0 C 956.4504,447 951,452.4504 951,459.17381 c 0,3.98649 1.91615,7.52543 4.87768,9.74606 z"
+		     id="Combined-Shape-Copy-4"
+		     inkscape:connector-curvature="0"
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+		  <rect
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="19"
+		     width="18.362904"
+		     y="581.47992"
+		     x="786.83978"
+		     id="rect4321" />
+		  <rect
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="19"
+		     width="41.430035"
+		     y="581.47992"
+		     x="807.83978"
+		     id="rect4323" />
+		  <rect
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="54"
+		     width="62.285046"
+		     y="602.47992"
+		     x="786.83978"
+		     id="rect4325" />
+		  <rect
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="38.130016"
+		     width="36"
+		     y="658.47992"
+		     x="786.83978"
+		     id="rect4327" />
+		  <rect
+		     style="fill:#e3e3e3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+		     height="37.440014"
+		     width="24.235012"
+		     y="658.47992"
+		     x="824.83978"
+		     id="rect4333" />
+		</svg>
+
+	</div><!-- devices-screens-gray-->
+</div>
+</body>
   <div class="small-12 medium-4 columns">
     <div class="image-container"><img src="img/fluidaction.svg" alt="Fluid Design Action Icon"></div>
     <p class="app-phase">Action</p>
@@ -492,7 +1365,7 @@
     <p class="app-phase-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consequat a velit sed mollis. Duis in pharetra mauris, non commodo leo.</p>
   </div>
   <div class="small-12 columns">
-    <img class="fluid-hero" src="img/fluidhero.png" alt="Fluid Design Application Hero Image">
+    <img class="zoomable-image fluid-hero" src="img/fluidhero.png" alt="Fluid Design Application Hero Image">
     <p class="hero-text">Your Design Experience Elevated.</p>
   </div>
   <div class="small-12 columns">
@@ -613,7 +1486,7 @@
           <p class="feature-text-2">With Handoff you can create experiences that bridge platforms. Helping you design for the way we live everyday. Whether on our phones, or talking to our voice assitants.</p>
         </div>
         <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/fluidhandoffinterface.png" alt="Handoff Interface"></div>
+          <div class="zoomable-image image-container feature-image"><img src="img/fluidhandoffinterface.png" alt="Handoff Interface"></div>
         </div>
       </div>
     </div>
