@@ -218,11 +218,35 @@ svg {
   border-top: none; }
 
 @media screen and (max-width: 40em) {
-  .feature-image {
-    padding-left: 20px;
-    padding-right: 20px; }
+  .feature-tile .feature-image {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .feature-tile .feature-title-2 {
+    font-size: 24px; }
+
+  .hero-text {
+    font-size: 32px;
+    margin-bottom: 60px;
+    margin-top: 40px; }
 
   p {
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 18px; } }
+    font-size: 18px; }
+
+  .message-bubble {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px; }
+
+  h1 {
+    margin-top: 20px;
+    margin-bottom: 10px; }
+
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 10px; }
+
+  section {
+    margin-top: 40px; } }
