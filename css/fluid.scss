@@ -293,19 +293,19 @@ svg{
 .footer-content{
   position: absolute;
   width: 100%;
-  bottom: 10%;
+  bottom: 8%;
   z-index: 2;
   p{
     text-align: center;
     color: white;
   }
   .footer-title{
-    font-size: 64px;
+    font-size: 60px;
     font-weight: $bold;
     font-family: $poppins;
   }
   .rehan-logo{
-    max-width: 200px;
+    max-width: 160px;
     margin-top: 50px;
   }
 }
