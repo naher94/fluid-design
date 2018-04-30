@@ -50,7 +50,9 @@ section {
   padding-top: 15px;
   padding-bottom: 10px;
   border-radius: 30px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  opacity: 0.0;
+  transform: translateX(250px); }
 
 .workshop {
   padding: 25px;
@@ -204,6 +206,9 @@ svg {
   stroke-linejoin: round;
   stroke: url(#linear);
   /*stroke: #F79868;*/ }
+
+.zoomable-image {
+  cursor: zoom-in; }
 
 .site-header {
   border-top: none;
