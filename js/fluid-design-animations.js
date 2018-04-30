@@ -92,6 +92,23 @@ window.addEventListener('load', function() {
 		    duration: 1500,
 		  })
 
+		  .add({
+		    targets: '.splash .mask',
+		    easing: 'linear',
+		    scaleX: 100,
+		    scaleY: 100,
+		    offset: 700,
+		    duration: 1500,
+		  })
+		  .add({
+		    targets: '.splash .mask2',
+		    easing: 'linear',
+		    scaleX: 100,
+		    scaleY: 100,
+		    offset: 900,
+		    duration: 1500,
+		  })
+
 	/*var basicTimeline = anime.timeline();
 	basicTimeline.autoplay = false;
 		basicTimeline
