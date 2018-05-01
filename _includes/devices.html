@@ -48,8 +48,8 @@
 		basicTimeline.autoplay = false;
 
 		$(window).scroll(function() {
-			var top = $('.devices').position().top
-			var height = $('.devices').height();
+			var top = $('.devices-box').position().top;
+			var height = $('.devices-box').height();
 			var scroll = $(window).scrollTop();
 			var speed = 600;
 	        var x = basicTimeline.duration * ((top + (height/4)) - scroll)/speed;

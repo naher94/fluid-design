@@ -524,8 +524,21 @@
 	background: rgba(255, 255, 255, 0);
 	filter: alpha(opacity=0);
 }
-
 </style>
+
+<script>
+window.addEventListener('load', function() {
+	$(window).scroll(function() {
+		var top = $('.switch').position().top;
+		var middle = top + $('.switch').height();
+		var scroll = $(window).scrollTop() + window.innerHeight/2;
+
+		var x = (middle - scroll);
+		$('#switch1').prop('checked', x<0);
+		$('#switch2').prop('checked', x<0);
+	});
+});
+</script>
 
     <div class="small-6 columns">
 	 <div class="complex-switch">
@@ -563,7 +576,7 @@
     </div>
     <div class="small-6 columns">
 	 <div class="simple-switch">
-		<input type="checkbox" id="switch" /><label for="switch"></label>
+		<input type="checkbox" id="switch2" /><label for="switch"></label>
 	</div>
   </div>
   <div class="image-container"><img src="img/wordicons.png" alt="Skeuomorphism Icons from Microsoft Word"/></div>
@@ -1148,8 +1161,8 @@ window.addEventListener('load', function() {
 		basicTimeline.autoplay = false;
 
 		$(window).scroll(function() {
-			var top = $('.devices').position().top
-			var height = $('.devices').height();
+			var top = $('.devices-box').position().top;
+			var height = $('.devices-box').height();
 			var scroll = $(window).scrollTop();
 			var speed = 600;
 	        var x = basicTimeline.duration * ((top + (height/4)) - scroll)/speed;
