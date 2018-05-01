@@ -3,7 +3,7 @@
 		background-color: white;
 		width: 90%;
 		margin-left: 5%;
-		height: 1000px;
+		height: 90vh;
 		overflow: hidden;
 		position: relative;
 	}
@@ -32,6 +32,13 @@
 		background-color: #ffffff;
 		opacity: 0.7;
 		transform-origin: 0% 100%;
+	}
+	.devices-drop {
+		position: absolute;
+		left: 19%;
+		top: 200px;
+		width: 2%;
+		opacity: 0.0;
 	}
 </style>
 
@@ -71,10 +78,27 @@
 				targets: '#svg3 #'+t.id,
 				easing: 'linear',
 				opacity: 0,
-				offset: 150+(i*3),
-				duration: 5,
+				offset: 250+(i*3),
+				duration: 15,
 			});
 		}
+
+		basicTimeline.add({
+			targets: '.devices-drop',
+			easing: 'linear',
+			offset: 100,
+			duration: 250,
+			top: 300,
+			opacity: 1,
+		});
+		basicTimeline.add({
+			targets: '.devices-drop',
+			easing: 'linear',
+			offset: 350,
+			duration: 250,
+			top: 400,
+			opacity: 0,
+		});
 
 		/*basicTimeline.add({
 			targets: '.devices-screens-gray rect',
@@ -866,5 +890,7 @@
 		</svg>
 
 	</div><!-- devices-screens-gray-->
+
+	<img src="../img/drop.svg" class="devices-drop"/>
 </div>
 </body>
