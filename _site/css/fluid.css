@@ -289,7 +289,9 @@ svg {
 .simple-switch {
   transform: rotate(90deg);
   left: 0px;
-  top: 0px; }
+  top: 0px;
+  display: inline-block;
+  margin-top: 170px; }
   .simple-switch input[type=checkbox] {
     height: 0;
     width: 0;
@@ -300,7 +302,6 @@ svg {
     width: 200px;
     height: 100px;
     background: grey;
-    display: block;
     border-radius: 100px;
     position: relative; }
   .simple-switch label:after {

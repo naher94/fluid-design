@@ -408,6 +408,8 @@ svg{
   transform: rotate(90deg);
   left: 0px;
   top: 0px;
+  display: inline-block;
+  margin-top: 170px;
 
   input[type=checkbox]{
     height: 0;
@@ -421,7 +423,7 @@ svg{
     width: 200px;
     height: 100px;
     background: grey;
-    display: block;
+//    display: block;
     border-radius: 100px;
     position: relative;
   }
