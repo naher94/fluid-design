@@ -31,10 +31,42 @@ window.addEventListener('load', function() {
 		})(i)
 	}
 
-	/*document.body.addEventListener('mousemove', function (e) {
-		var x = t.duration * (e.x/window.innerWidth);
-		t.seek(x);
-	})*/
+	var el = document.querySelector('#domNode .el');
+	anime({
+		targets: '#domNode .el',
+		rotate: 15,
+		duration: 0,
+	});
+	anime({
+		targets: '#domNode .el2',
+		rotate: 15,
+		duration: 0,
+	});
+
+	document.getElementById('domNode').onmouseover = function () {
+		anime({
+			targets: '#domNode .el',
+			rotate: 45,
+			duration: 200,
+		});
+		anime({
+			targets: '#domNode .el2',
+			rotate: -15,
+			duration: 200,
+		});
+	}
+	document.getElementById('domNode').onmouseout = function () {
+		anime({
+			targets: '#domNode .el',
+			rotate: 15,
+			duration: 200,
+		});
+		anime({
+			targets: '#domNode .el2',
+			rotate: 15,
+			duration: 200,
+		});
+	}
 
 	var el = document.querySelector('#domNode .el');
 

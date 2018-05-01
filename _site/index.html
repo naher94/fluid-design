@@ -939,9 +939,9 @@
 .fluid-logo {
 	position: relative;
 	width: 100%;
-	height: 1160px;
+	height: 100vh;
 	transform-origin: 0% 0%;
-	margin-left: 5%;
+	margin-left: 22.2%;
 }
 .fluid-logo-type {
 	position: absolute;
@@ -953,7 +953,7 @@
 	position: absolute;
 	left: 0px;
 	top: 217px;
-	width: 1000px;
+	width: 1320px;
 }
 </style>
 
@@ -978,7 +978,8 @@ window.addEventListener('load', function() {
   });
 
   function scaleAnimation () {
-  	var s = window.innerWidth / 1160;
+  	var s = window.innerWidth / 1160 / 1.667;
+  	if(s > 1) s = 1;
   	$('.fluid-logo').css('transform', 'scale('+s+')');
   }
   scaleAnimation()
@@ -1102,7 +1103,7 @@ window.addEventListener('load', function() {
 		background-color: white;
 		width: 90%;
 		margin-left: 5%;
-		height: 1000px;
+		height: 90vh;
 		overflow: hidden;
 		position: relative;
 	}
@@ -1131,6 +1132,13 @@ window.addEventListener('load', function() {
 		background-color: #ffffff;
 		opacity: 0.7;
 		transform-origin: 0% 100%;
+	}
+	.devices-drop {
+		position: absolute;
+		left: 19%;
+		top: 200px;
+		width: 2%;
+		opacity: 0.0;
 	}
 </style>
 
@@ -1170,10 +1178,27 @@ window.addEventListener('load', function() {
 				targets: '#svg3 #'+t.id,
 				easing: 'linear',
 				opacity: 0,
-				offset: 150+(i*3),
-				duration: 5,
+				offset: 250+(i*3),
+				duration: 15,
 			});
 		}
+
+		basicTimeline.add({
+			targets: '.devices-drop',
+			easing: 'linear',
+			offset: 100,
+			duration: 250,
+			top: 300,
+			opacity: 1,
+		});
+		basicTimeline.add({
+			targets: '.devices-drop',
+			easing: 'linear',
+			offset: 350,
+			duration: 250,
+			top: 400,
+			opacity: 0,
+		});
 
 		/*basicTimeline.add({
 			targets: '.devices-screens-gray rect',
@@ -1965,6 +1990,8 @@ window.addEventListener('load', function() {
 		</svg>
 
 	</div><!-- devices-screens-gray-->
+
+	<img src="../img/drop.svg" class="devices-drop"/>
 </div>
 </body>
 <section class="row">
@@ -2285,9 +2312,49 @@ window.addEventListener('load', function() {
 		transform: translateX(-50%);
 		opacity: 1;
 	}
+
+	/* pages */
+	.el {
+		/*background-color: red;
+	    -webkit-mask-image: url(Page.svg);
+	    mask-image: url(Page.svg);*/
+	    background:url(../img/Page.svg);
+	    
+		background-size: 100% 100%;
+		width: 120px;
+		height: 120px;
+		left: 80px;
+		top: 30px;
+		position: absolute;
+		transform-origin: 60% 80%;
+		pointer-events: none;
+		fill: yellow;
+	}
+	.el2 {
+		/*background-color: red;
+	    -webkit-mask-image: url(Page.svg);
+	    mask-image: url(Page.svg);*/
+	    background:url(../img/Page.svg);
+
+		background-size: 100% 100%;
+		width: 120px;
+		height: 120px;
+		left: 40px;
+		top: 30px;
+		pointer-events: none;
+		position: absolute;
+		transform-origin: 60% 80%;
+	}
+	#domNode {
+		position: relative;
+		width: 250px;
+		height: 180px;
+		margin-left: 50%;
+		margin-bottom: 0px;
+		transform: translateX(-50%) translateY(200%);
+		cursor: pointer;
+	}
 </style>
-
-
 	<div class="splash">
 		<div class="water">
 			<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -2678,6 +2745,10 @@ window.addEventListener('load', function() {
 			        </g>
 			    </g>
 			</svg>
+		</div>
+		<div id="domNode">
+			<div class="el"/></div>
+			<div class="el2"/></div>
 		</div>
 	</div><!-- splash -->
 

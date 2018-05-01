@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="97px" height="132px" viewBox="0 0 97 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="101.999998%" y2="100.999999%" id="linearGradient-1">
+            <stop stop-color="#7BC8D2" offset="0%"></stop>
+            <stop stop-color="#00CAAE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-7" transform="translate(-672.000000, -38751.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M720.04072,38751.0227 C719.031197,38751.1316 718.090285,38751.5849 717.376894,38752.3058 C694.083302,38775.964 672,38806.6029 672,38833.8293 C672,38860.8855 693.739631,38883 720.5,38883 C747.26051,38883 769,38860.8855 769,38833.8293 C769,38806.6029 746.916577,38775.964 723.623106,38752.3058 C722.684989,38751.3594 721.367899,38750.8877 720.04072,38751.0227 Z" id="Shape-Copy-3"></path>
+        </g>
+    </g>
+</svg>

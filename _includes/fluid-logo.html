@@ -2,9 +2,9 @@
 .fluid-logo {
 	position: relative;
 	width: 100%;
-	height: 1160px;
+	height: 100vh;
 	transform-origin: 0% 0%;
-	margin-left: 5%;
+	margin-left: 22.2%;
 }
 .fluid-logo-type {
 	position: absolute;
@@ -16,7 +16,7 @@
 	position: absolute;
 	left: 0px;
 	top: 217px;
-	width: 1000px;
+	width: 1320px;
 }
 </style>
 
@@ -41,7 +41,8 @@ window.addEventListener('load', function() {
   });
 
   function scaleAnimation () {
-  	var s = window.innerWidth / 1160;
+  	var s = window.innerWidth / 1160 / 1.667;
+  	if(s > 1) s = 1;
   	$('.fluid-logo').css('transform', 'scale('+s+')');
   }
   scaleAnimation()

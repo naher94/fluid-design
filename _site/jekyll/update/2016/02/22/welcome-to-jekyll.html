@@ -197,9 +197,49 @@
 		transform: translateX(-50%);
 		opacity: 1;
 	}
+
+	/* pages */
+	.el {
+		/*background-color: red;
+	    -webkit-mask-image: url(Page.svg);
+	    mask-image: url(Page.svg);*/
+	    background:url(../img/Page.svg);
+	    
+		background-size: 100% 100%;
+		width: 120px;
+		height: 120px;
+		left: 80px;
+		top: 30px;
+		position: absolute;
+		transform-origin: 60% 80%;
+		pointer-events: none;
+		fill: yellow;
+	}
+	.el2 {
+		/*background-color: red;
+	    -webkit-mask-image: url(Page.svg);
+	    mask-image: url(Page.svg);*/
+	    background:url(../img/Page.svg);
+
+		background-size: 100% 100%;
+		width: 120px;
+		height: 120px;
+		left: 40px;
+		top: 30px;
+		pointer-events: none;
+		position: absolute;
+		transform-origin: 60% 80%;
+	}
+	#domNode {
+		position: relative;
+		width: 250px;
+		height: 180px;
+		margin-left: 50%;
+		margin-bottom: 0px;
+		transform: translateX(-50%) translateY(200%);
+		cursor: pointer;
+	}
 </style>
-
-
 	<div class="splash">
 		<div class="water">
 			<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -590,6 +630,10 @@
 			        </g>
 			    </g>
 			</svg>
+		</div>
+		<div id="domNode">
+			<div class="el"/></div>
+			<div class="el2"/></div>
 		</div>
 	</div><!-- splash -->
 
