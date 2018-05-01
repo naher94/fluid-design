@@ -210,6 +210,32 @@ svg {
 .zoomable-image {
   cursor: zoom-in; }
 
+.footer-content {
+  position: absolute;
+  width: 100%;
+  bottom: 8%;
+  z-index: 2; }
+  .footer-content p {
+    text-align: center;
+    color: white; }
+  .footer-content .footer-title {
+    font-size: 60px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif; }
+  .footer-content .rehan-logo {
+    max-width: 160px;
+    margin-top: 50px; }
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none; }
+
 .site-header {
   border-top: none;
   border-bottom: none; }
