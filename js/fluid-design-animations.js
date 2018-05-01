@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
 	});
 
 	$(window).scroll(function() {
-        var x = basicTimeline.duration * ($('.splash').position().top + ($('.splash').height()/4) - $(window).scrollTop())/400;
+        var x = basicTimeline.duration * ($('.splash').position().top + ($('.splash').height()/3) - $(window).scrollTop())/400;
 		basicTimeline.seek(basicTimeline.duration-x)
     });
 	var basicTimeline = anime.timeline();
