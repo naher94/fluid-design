@@ -287,7 +287,7 @@ svg {
     margin-top: 40px; } }
 /*Switches*/
 .simple-switch {
-  transform: rotate(90deg);
+  transform: rotate(270deg);
   left: 0px;
   top: 0px;
   display: inline-block;
