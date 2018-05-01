@@ -54,6 +54,16 @@ section {
   opacity: 0.0;
   transform: translateX(250px); }
 
+.sent-message-hook-right {
+  position: absolute;
+  bottom: 0px;
+  right: -13px; }
+
+.sent-message-hook-left {
+  position: absolute;
+  bottom: 0px;
+  left: -13px; }
+
 .workshop {
   padding: 25px;
   border-radius: 25px; }
@@ -186,8 +196,7 @@ section {
 header {
   height: 50vh;
   overflow: hidden;
-  display: block;
-  margin-bottom: 100px; }
+  display: block; }
 
 header h1 {
   position: absolute;
@@ -276,3 +285,54 @@ svg {
 
   section {
     margin-top: 40px; } }
+/*Switches*/
+.all-switches {
+  position: relative;
+  width: 100%;
+  height: 500px; }
+
+.simple-switch {
+  transform: rotate(90deg);
+  position: absolute;
+  left: 0px;
+  top: 0px; }
+  .simple-switch input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden; }
+  .simple-switch label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 200px;
+    height: 100px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative; }
+  .simple-switch label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s; }
+  .simple-switch input:checked + label {
+    background: #bada55; }
+  .simple-switch input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%); }
+  .simple-switch label:active:after {
+    width: 130px; }
+  .simple-switch body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; }
+
+.complex-switch {
+  position: absolute;
+  left: 0px;
+  top: 0px; }
