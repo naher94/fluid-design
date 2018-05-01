@@ -404,15 +404,8 @@ svg{
 
 /*Switches*/
 
-.all-switches {
-  position: relative;
-  width: 100%;
-  height: 500px;
-}
-
 .simple-switch {
   transform: rotate(90deg);
-  position: absolute;
   left: 0px;
   top: 0px;
 
@@ -468,7 +461,6 @@ svg{
 }
 
 .complex-switch {
-  position: absolute;
   left: 0px;
   top: 0px;
 }
