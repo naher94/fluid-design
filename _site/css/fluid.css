@@ -286,16 +286,12 @@ svg {
   section {
     margin-top: 40px; } }
 /*Switches*/
-.all-switches {
-  position: relative;
-  width: 100%;
-  height: 500px; }
-
 .simple-switch {
-  transform: rotate(90deg);
-  position: absolute;
+  transform: rotate(270deg);
   left: 0px;
-  top: 0px; }
+  top: 0px;
+  display: inline-block;
+  margin-top: 170px; }
   .simple-switch input[type=checkbox] {
     height: 0;
     width: 0;
@@ -306,7 +302,6 @@ svg {
     width: 200px;
     height: 100px;
     background: grey;
-    display: block;
     border-radius: 100px;
     position: relative; }
   .simple-switch label:after {
@@ -333,6 +328,4 @@ svg {
     height: 100vh; }
 
 .complex-switch {
-  position: absolute;
-  left: 0px;
-  top: 0px; }
+  float: right; }
