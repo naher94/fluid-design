@@ -81,8 +81,23 @@ window.addEventListener('load', function() {
 	});
 
 	$(window).scroll(function() {
-        var x = basicTimeline.duration * ($('.splash').position().top + ($('.splash').height()/3) - $(window).scrollTop())/400;
-		basicTimeline.seek(basicTimeline.duration-x)
+		var top = $('.splash').position().top + $('.splash').height()/2;
+		var height = $('.splash').height()/2;
+		var bottom = top + height;
+		var mid = top + height/2;
+
+		var scrollTop = $(window).scrollTop();
+		var scrollMid = $(window).scrollTop() + window.innerHeight/2;
+		var scrollBottom = $(window).scrollTop() + window.innerHeight;
+
+		//scrollBottom -= 300
+		
+		var x = (scrollBottom-top)/height
+		basicTimeline.seek(x*basicTimeline.duration)
+
+        //var x = basicTimeline.duration * (() - ($(window).scrollTop()-window.innerHeight))/window.innerHeight;
+		//console.log(x)
+		//basicTimeline.seek(basicTimeline.duration-x)
     });
 	var basicTimeline = anime.timeline();
 	basicTimeline.autoplay = false;
@@ -159,16 +174,16 @@ window.addEventListener('load', function() {
 		  .add({
 		    targets: '.splash .mask',
 		    easing: 'linear',
-		    scaleX: 100,
-		    scaleY: 100,
+		    scaleX: 130,
+		    scaleY: 130,
 		    offset: 700,
 		    duration: 1500,
 		  })
 		  .add({
 		    targets: '.splash .mask2',
 		    easing: 'linear',
-		    scaleX: 100,
-		    scaleY: 100,
+		    scaleX: 130,
+		    scaleY: 130,
 		    offset: 900,
 		    duration: 1500,
 		  })
