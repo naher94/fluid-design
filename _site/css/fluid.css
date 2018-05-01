@@ -327,5 +327,4 @@ svg {
     height: 100vh; }
 
 .complex-switch {
-  left: 0px;
-  top: 0px; }
+  float: right; }
