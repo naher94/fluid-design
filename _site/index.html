@@ -23,17 +23,20 @@
   
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/foundation.css">  
+  <link rel="stylesheet" href="/css/foundation.min.css">  
   <link rel="stylesheet" href="/css/fluid.css">
   <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/normalize.css">
   
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Fluid Design" href="http://localhost:4000/feed.xml">
 
   <script src="../js/anime.min.js"></script>
-  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/jquery.js"></script>
   <script src="../js/fluid-design-animations.js"></script>
   <script src="../js/image-zoomer.js"></script>
+  <script src="../js/foundation.min.js"></script>
+  <script src="../js/masonry.pkgd.min.js"></script>
 
   <link  href="../js/viewer.css" rel="stylesheet">
   <script src="../js/viewer.js"></script>
@@ -947,6 +950,1209 @@ window.addEventListener('load', function() {
     <div class="image-container fluid-app-icon"><img src="img/fluidappicon.png" alt="Fluid Design Application Icon"></div>
   </div>
 </section>
+<<<<<<< HEAD
+<script>
+  var TITLE_WAVE_DURATION = 10000;
+
+  var DRIP_START = 880;
+  var DRIP_DURATION = 600;
+  var DRIP_FALL_AMT = 900;
+
+  var FUNNEL_FLASH_DURATION = 500;
+
+  var PIPES_FILL_DURATION = 200;
+
+  var DROPLETS_START_TIME = DRIP_START+DRIP_DURATION+PIPES_FILL_DURATION;
+  var DROPLETS_DURATION = 100;
+  var DROPLETS_OFFSET = 50;
+  var DROPLETS_FALL_DISTANCE = 100;
+
+  var SCREEN_BLINK_OFFSET = 10;
+
+  window.addEventListener('load', function() {
+    $(window).scroll(function() {
+      var top = $('#fluid-animation').position().top;
+      var height = $('#fluid-animation').height();
+      var bottom = top + height;
+      var mid = top + height/2;
+
+      var scrollTop = $(window).scrollTop();
+      var scrollMid = $(window).scrollTop() + window.innerHeight/2;
+      var scrollBottom = $(window).scrollTop() + window.innerHeight;
+      
+      var d = (scrollBottom-mid)/height
+      t.seek(d*t.duration)
+    });
+
+    $('#cup-fluid').css('transform-origin', '0px 20.5%');
+    $('#cup').css('transform-origin', '31% 17%');
+    $('#pour').css('stroke-dasharray', '720px 720px');
+    $('#pipes path').css('stroke-dasharray', '');
+    $('#drip').css('transform-origin', '50.2% 50%');
+    
+    anime({
+      targets: '#wave-bottom path',
+      translateX: [
+        { value: "-100%" },
+      ],
+      easing: 'linear',
+      duration: TITLE_WAVE_DURATION,
+      loop: true
+    });
+    anime({
+      targets: '#wave-top path',
+      translateX: [
+        { value: "100%" },
+      ],
+      easing: 'linear',
+      duration: TITLE_WAVE_DURATION,
+      loop: true
+    });
+
+    var t = anime.timeline();
+    t.autoplay = false;
+
+    t.add({
+      targets: '#cup',
+      offset: 0,
+      rotate: '23deg',
+      duration: 1000,
+    });
+
+    t.add({
+      targets: '#cup-fluid',
+      offset: 0,
+      scaleY: 1.7,
+      duration: 1000,
+    });
+
+    t.add({
+      targets: '#pour',
+      duration: 1000,
+      offset: 300,
+      strokeDashoffset: {
+        value: [anime.setDashoffset, 0],
+        easing: 'linear'
+      }
+    });
+
+    t.add({
+      targets: '#drip',
+      duration: 1,
+      offset: DRIP_START,
+      opacity: 1,
+      easing: 'linear',
+    });
+    t.add({
+      targets: '#drip',
+      duration: DRIP_DURATION,
+      offset: DRIP_START,
+      easing: 'linear',
+      translateY: DRIP_FALL_AMT,
+      scaleX: 3,
+      scaleY: 3,
+    });
+    t.add({
+      targets: '#drip',
+      duration: 1500,
+      offset: DRIP_START+DRIP_DURATION,
+      translateY: DRIP_FALL_AMT+10,
+      opacity: 0,
+      scaleX: 3,
+      scaleY: 3,
+    });
+
+    t.add({
+      targets: '#funnel',
+      duration: FUNNEL_FLASH_DURATION,
+      offset: DRIP_START+DRIP_DURATION,
+      fill: '#7BC8D2',
+    });
+
+    t.add({
+      targets: '#pipes path',
+      duration: PIPES_FILL_DURATION,
+      offset: DRIP_START+DRIP_DURATION,
+      stroke: '#7BC8D2',
+      strokeDashoffset: {
+        value: [anime.setDashoffset, 0],
+        easing: 'linear'
+      }
+    });
+
+    t.add({
+      targets: '#arrows path',
+      duration: 1000,
+      offset: DRIP_START+DRIP_DURATION+PIPES_FILL_DURATION,
+      fill: '#7BC8D2',
+    });
+
+    $('#droplets').children().each(function (i) {
+        t.add({
+        targets: '#'+this.id,
+        translateY: DROPLETS_FALL_DISTANCE,
+        easing: 'linear',
+        offset: i*DROPLETS_OFFSET + DROPLETS_START_TIME,
+        opacity: 1,
+        duration: DROPLETS_DURATION,
+      });
+      t.add({
+        targets: '#'+this.id,
+        translateY: DROPLETS_FALL_DISTANCE*2,
+        easing: 'linear',
+        offset: i*DROPLETS_OFFSET + DROPLETS_DURATION + DROPLETS_START_TIME,
+        opacity: 0,
+        duration: DROPLETS_DURATION,
+      });
+    });
+
+    $('#screens-gray').children().each(function (i) {
+      t.add({
+        targets: '#'+this.id,
+        easing: 'linear',
+        offset: DROPLETS_START_TIME+DROPLETS_DURATION+ i * SCREEN_BLINK_OFFSET,
+        opacity: 0,
+        duration: 20,
+      });
+    });
+    $('#screens-flash').children().each(function (i) {
+      t.add({
+        targets: '#'+this.id,
+        easing: 'linear',
+        offset: DROPLETS_START_TIME+DROPLETS_DURATION + i * SCREEN_BLINK_OFFSET,
+        opacity: 0.5,
+        duration: SCREEN_BLINK_OFFSET,
+      });
+      t.add({
+        targets: '#'+this.id,
+        easing: 'linear',
+        offset: DROPLETS_START_TIME+DROPLETS_DURATION+ i * SCREEN_BLINK_OFFSET + SCREEN_BLINK_OFFSET,
+        opacity: 0,
+        duration: SCREEN_BLINK_OFFSET,
+      });
+    });
+  });
+</script>
+
+<style>
+  
+</style>
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1210"
+   height="1700"
+   viewBox="0 0 1210 1700"
+   version="1.1"
+   id="fluid-animation"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Fluid Design Diagram.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1295"
+     inkscape:window-height="727"
+     id="namedview86"
+     showgrid="false"
+     inkscape:zoom="1.0247934"
+     inkscape:cx="430.2875"
+     inkscape:cy="592.06452"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <g
+     id="pipes-gray"
+     style="opacity:0.38600003">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round"
+       inkscape:connector-curvature="0"
+       d="m 608.05584,1089.3556 0.0743,115.5817"
+       id="path6481" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round"
+       inkscape:connector-curvature="0"
+       d="m 608.09296,1089.3556 0,29.6817 c 0,11.0457 8.9543,20 20,20 l 178.88584,0 c 11.0457,0 20,8.9543 20,20 l 0,45.9"
+       id="path6483" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round"
+       inkscape:connector-curvature="0"
+       d="m 608.09296,1089.3556 0,29.6817 c 0,11.0457 8.95431,20 20,20 l 405.95434,0 c 11.0457,0 20,8.9543 20,20 l 0,45.9"
+       id="path6485" />
+    <path
+       sodipodi:nodetypes="cssssc"
+       id="path6487"
+       d="m 609.12794,1089.3072 0,29.6817 c 0,11.0457 -8.95431,20 -20,20 l -333.95434,0 c -11.0457,0 -20,8.9543 -20,20 l 0,45.9"
+       inkscape:connector-curvature="0"
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round" />
+  </g>
+  <path
+     style="fill:url(#linearGradient5649);fill-rule:evenodd;stroke:none;stroke-width:1"
+     id="banner"
+     d="M 1210,566.78148 1210,1.678 0,1.678 0,567.09677 Z"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <g
+     id="wave-bottom"
+     transform="translate(0,117.14516)">
+    <path
+       sodipodi:nodetypes="czcccc"
+       inkscape:connector-curvature="0"
+       id="rect6088"
+       d="m 4.8210409e-6,364.09702 c 0,0 321.3655851789591,91.72581 604.9999951789591,0 283.63441,-91.72581 605,0 605,0 l 0,87.82258 -1209.9999951789591,0 z"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4.19999981;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4.19999981;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1208,364.09702 c 0,0 321.3656,91.72581 605,0 283.6344,-91.72581 605,0 605,0 l 0,87.82258 -1210,0 z"
+       id="path6102"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czcccc" />
+  </g>
+  <g
+     id="wave-top"
+     transform="matrix(-1,0,0,-1,2420,451.28186)">
+    <path
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4.19999981;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2.0000048,364.09702 c 0,0 321.3655852,91.72581 604.9999952,0 283.63441,-91.72581 605,0 605,0 l 0,87.82258 -1209.9999952,0 z"
+       id="path6110"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czcccc" />
+    <path
+       sodipodi:nodetypes="czcccc"
+       inkscape:connector-curvature="0"
+       id="path6112"
+       d="m 1210,364.09702 c 0,0 321.3656,91.72581 605,0 283.6344,-91.72581 605,0 605,0 l 0,87.82258 -1210,0 z"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4.19999981;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <g
+     id="screens"
+     style="opacity:1">
+    <rect
+       style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="33"
+       width="89"
+       y="1460"
+       x="90"
+       id="Rectangle-6" />
+    <rect
+       style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="33"
+       width="206"
+       y="1460"
+       x="184"
+       id="Rectangle-6-Copy" />
+    <rect
+       style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="56"
+       width="300"
+       y="1498"
+       x="90"
+       id="Rectangle-6-Copy-2" />
+    <rect
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="56"
+       width="96"
+       y="1559"
+       x="90"
+       id="Rectangle-6-Copy-3" />
+    <rect
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="56"
+       width="96"
+       y="1559"
+       x="192"
+       id="Rectangle-6-Copy-5" />
+    <rect
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="56"
+       width="96"
+       y="1559"
+       x="294"
+       id="Rectangle-6-Copy-4" />
+    <rect
+       style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="19"
+       width="33"
+       y="1470"
+       x="555"
+       id="Rectangle-6-Copy-6" />
+    <rect
+       style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="19"
+       width="78"
+       y="1470"
+       x="590"
+       id="Rectangle-6-Copy-7" />
+    <rect
+       style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="54"
+       width="113"
+       y="1491"
+       x="555"
+       id="Rectangle-6-Copy-8" />
+    <rect
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="54"
+       width="36"
+       y="1547"
+       x="555"
+       id="Rectangle-6-Copy-9" />
+    <rect
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="54"
+       width="37"
+       y="1547"
+       x="593"
+       id="Rectangle-6-Copy-11" />
+    <rect
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="54"
+       width="36"
+       y="1547"
+       x="632"
+       id="Rectangle-6-Copy-10" />
+    <rect
+       style="fill:#e986e0;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="27"
+       width="113"
+       y="1603"
+       x="555"
+       id="Rectangle-6-Copy-12" />
+    <rect
+       id="rect4321"
+       x="786.83978"
+       y="1533.48"
+       width="18.362904"
+       height="19"
+       style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect4323"
+       x="807.83978"
+       y="1533.48"
+       width="41.430035"
+       height="19"
+       style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect4325"
+       x="786.83978"
+       y="1554.48"
+       width="62.285046"
+       height="54"
+       style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect4327"
+       x="786.83978"
+       y="1610.48"
+       width="36"
+       height="38.130016"
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect4333"
+       x="824.83978"
+       y="1610.48"
+       width="24.235012"
+       height="37.440014"
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <path
+       style="fill:#4a90e2;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:connector-curvature="0"
+       id="path68"
+       d="m 1125.1223,1358.9199 3.3777,8.105 c -6.916,-3.1442 -11.494,-5.0366 -13.7342,-5.6773 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.1738 0,-6.7234 5.4504,-12.1738 12.1738,-12.1738 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.1738 0,3.9865 -1.9161,7.5254 -4.8777,9.7461 z" />
+    <rect
+       style="fill:#d0021b;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       rx="12"
+       height="24"
+       width="130"
+       y="1372"
+       x="-1081"
+       transform="scale(-1,1)"
+       id="Combined-Shape-Copy-2" />
+    <path
+       style="fill:#f5a623;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:connector-curvature="0"
+       id="Combined-Shape-Copy-4"
+       d="m 955.87768,1420.9199 -3.37767,8.105 c 6.91597,-3.1442 11.49402,-5.0366 13.73417,-5.6773 l 102.59202,0 c 6.7234,0 12.1738,-5.4504 12.1738,-12.1738 0,-6.7234 -5.4504,-12.1738 -12.1738,-12.1738 l -105.65239,0 C 956.4504,1399 951,1404.4504 951,1411.1738 c 0,3.9865 1.91615,7.5254 4.87768,9.7461 z" />
+    <rect
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       rx="12"
+       height="24"
+       width="130"
+       y="1437"
+       x="-1130"
+       transform="scale(-1,1)"
+       id="Combined-Shape-Copy-5" />
+    <path
+       style="fill:#b8e986;fill-opacity:0.6;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:connector-curvature="0"
+       id="Combined-Shape-Copy-3"
+       d="m 1125.1223,1485.9199 3.3777,8.105 c -6.916,-3.1442 -11.494,-5.0366 -13.7342,-5.6773 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.1738 0,-6.7234 5.4504,-12.1738 12.1738,-12.1738 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.1738 0,3.9865 -1.9161,7.5254 -4.8777,9.7461 z" />
+  </g>
+  <defs
+     id="defs8">
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5686"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path5683"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Sstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5680"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.2) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path5677"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5674"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path5671"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5668"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <rect
+       id="path-1"
+       x="0"
+       y="0"
+       width="73"
+       height="129"
+       rx="7" />
+    <path
+       d="m 35,29 39.183548,-14.100271 6.738381,78.001867 c 0.849715,15.097804 -0.776423,25.417584 -4.878416,30.959354 -3.566657,4.81853 -8.649549,8.80083 -15.248675,11.9469 l -14.654192,0 -25.794838,0 C 13.746682,132.66178 8.6637905,128.67948 5.0971332,123.86095 0.99514023,118.31918 -0.63099831,107.9994 0.21871753,92.901596 L 6.140646,29 35,29 Z"
+       id="path-3"
+       inkscape:connector-curvature="0" />
+    <path
+       d="M 0.07673846,96 81.063908,96 c 0.468103,13.41988 -1.205362,22.70686 -5.020395,27.86095 -3.566657,4.81853 -8.649549,8.80083 -15.248675,11.9469 l -14.654192,0 -25.794838,0 C 13.746682,132.66178 8.6637905,128.67948 5.0971332,123.86095 1.2820999,118.70686 -0.39136503,109.41988 0.07673846,96 Z"
+       id="path-4"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       id="path-5"
+       cx="40.201488"
+       cy="22.243252"
+       rx="34.786583"
+       ry="14.698683" />
+    <path
+       d="m 513.354,379 c 13.074,0 26.15,4.49 38.892,13.469 l 4.826,3.401 0,131.13 -152.072,0 0,-147.202 17.983,12.67 c 17.6,12.402 33.874,12.402 51.476,0 C 487.204,383.49 500.278,379 513.354,379 Z m 160.034,18.38 0,23.4 -51.505,0 0,27.18 38.539,0 0,23.4 -38.539,0 0,52.38 -30.793,0 0,-126.36 82.299,0 z m 52.045,-6.84 0,133.2 -30.795,0 0,-133.2 30.795,0 z m 126.06,32.76 0,100.44 -30.795,0 0,-14.76 c -3.001,4.92 -7.113,8.79 -12.336,11.61 -5.222,2.82 -11.255,4.23 -18.099,4.23 -7.563,0 -14.256,-1.71 -20.08,-5.13 -5.822,-3.42 -10.384,-8.37 -13.686,-14.85 -3.301,-6.48 -4.952,-14.1 -4.952,-22.86 l 0,-58.68 30.615,0 0,54.54 c 0,6.48 1.71,11.49 5.132,15.03 3.422,3.54 8.134,5.31 14.137,5.31 6.003,0 10.715,-1.77 14.137,-5.31 3.421,-3.54 5.132,-8.55 5.132,-15.03 l 0,-54.54 30.795,0 z m 24.311,-24.12 c 0,-5.16 1.741,-9.48 5.223,-12.96 3.481,-3.48 7.743,-5.22 12.786,-5.22 5.042,0 9.304,1.74 12.786,5.22 3.482,3.48 5.222,7.8 5.222,12.96 0,5.04 -1.74,9.3 -5.222,12.78 -3.482,3.48 -7.744,5.22 -12.786,5.22 -5.043,0 -9.305,-1.74 -12.786,-5.22 -3.482,-3.48 -5.223,-7.74 -5.223,-12.78 z m 33.496,24.12 0,100.44 -30.795,0 0,-100.44 30.795,0 z m 65.371,-1.08 c 12.846,0 22.691,4.74 29.534,14.22 l 0,-45.9 30.795,0 0,133.2 -30.795,0 0,-14.58 c -7.443,10.56 -17.288,15.84 -29.534,15.84 -8.284,0 -15.937,-2.16 -22.96,-6.48 -7.024,-4.32 -12.577,-10.38 -16.659,-18.18 -4.082,-7.8 -6.123,-16.68 -6.123,-26.64 0,-9.96 2.041,-18.84 6.123,-26.64 4.082,-7.8 9.635,-13.89 16.658,-18.27 7.024,-4.38 14.677,-6.57 22.961,-6.57 z m 7.564,26.64 c -3.602,0 -7.113,0.93 -10.535,2.79 -3.422,1.86 -6.183,4.65 -8.284,8.37 -2.101,3.72 -3.152,8.28 -3.152,13.68 0,5.4 1.05,9.93 3.152,13.59 2.1,3.66 4.832,6.42 8.194,8.28 3.361,1.86 6.903,2.79 10.625,2.79 3.602,0 7.113,-0.93 10.535,-2.79 3.422,-1.86 6.183,-4.65 8.284,-8.37 2.1,-3.72 3.151,-8.28 3.151,-13.68 0,-5.4 -1.05,-9.93 -3.151,-13.59 -2.101,-3.66 -4.832,-6.42 -8.194,-8.28 -3.362,-1.86 -6.903,-2.79 -10.625,-2.79 z M 485.999,417.807 c -10.654,7.536 -21.587,11.303 -32.517,11.305 -5.842,0 -11.683,-1.077 -17.482,-3.229 l 0,70.117 89,0 0,-80.804 c -13.194,-7.71 -25.64,-6.84 -39.001,2.61 z"
+       id="b"
+       inkscape:connector-curvature="0" />
+    <filter
+       filterUnits="objectBoundingBox"
+       y="-0.50700003"
+       x="-0.119"
+       height="2.0139999"
+       width="1.238"
+       id="a">
+      <feOffset
+         id="feOffset4565"
+         result="shadowOffsetOuter1"
+         in="SourceAlpha" />
+      <feGaussianBlur
+         id="feGaussianBlur4567"
+         stdDeviation="25"
+         result="shadowBlurOuter1"
+         in="shadowOffsetOuter1" />
+      <feColorMatrix
+         id="feColorMatrix4569"
+         values="0 0 0 0 0.670838648 0 0 0 0 0.670838648 0 0 0 0 0.670838648 0 0 0 0.5 0"
+         in="shadowBlurOuter1" />
+    </filter>
+    <linearGradient
+       id="linearGradient-1"
+       y2="1.01"
+       x2="1.02"
+       y1="0"
+       x1="0">
+      <stop
+         id="stop5279"
+         offset="0%"
+         stop-color="#7BC8D2" />
+      <stop
+         id="stop5281"
+         offset="100%"
+         stop-color="#00CAAE" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient5296"
+       x1="783.91675"
+       y1="33218.672"
+       x2="899.33447"
+       y2="33332.957"
+       gradientTransform="matrix(0.20476462,0,0,0.27625787,434.61099,-8589.779)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient-1-2"
+       y2="99.7358887%"
+       x2="100.723372%"
+       y1="0%"
+       x1="0%">
+      <stop
+         id="stop5632"
+         offset="0%"
+         stop-color="#F79868" />
+      <stop
+         id="stop5634"
+         offset="100%"
+         stop-color="#F15F63" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1-2"
+       id="linearGradient5649"
+       x1="17.391949"
+       y1="50514.223"
+       x2="859.78337"
+       y2="51328.888"
+       gradientTransform="matrix(-1.4165356,0,0,-0.7470898,1209.1609,38350.652)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient6121"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.28807278,0,0,0.39041458,364.53179,-11745.603)"
+       x1="783.91675"
+       y1="33218.672"
+       x2="899.33447"
+       y2="33332.957" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient6125"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.28807278,0,0,0.39041458,-5.2988574,-11745.603)"
+       x1="783.91675"
+       y1="33218.672"
+       x2="899.33447"
+       y2="33332.957" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient6129"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.28807278,0,0,0.39041458,585.33159,-11745.603)"
+       x1="783.91675"
+       y1="33218.672"
+       x2="899.33447"
+       y2="33332.957" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient6133"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.28807278,0,0,0.39041458,811.65138,-11745.603)"
+       x1="783.91675"
+       y1="33218.672"
+       x2="899.33447"
+       y2="33332.957" />
+  </defs>
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#7bc8d2;stroke-width:25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.5, 2.5;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 428.95585,251.22709 C 514.026,297.2836 605.2156,351.54026 606.57708,603.03496 l -2.0203,294.9645"
+     id="pour"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccc" />
+  <path
+     id="drip"
+     d="m 606.60474,587.14543 c -0.24114,0.0258 -0.4659,0.13309 -0.63631,0.30383 -5.56406,5.60264 -10.83902,12.85849 -10.83902,19.30608 0,6.40735 5.19287,11.64457 11.58503,11.64457 6.3922,0 11.58504,-5.23722 11.58504,-11.64457 0,-6.44759 -5.275,-13.70344 -10.83903,-19.30608 -0.22409,-0.22426 -0.53869,-0.33581 -0.85571,-0.30383 z"
+     inkscape:connector-curvature="0"
+     style="opacity:0;fill:url(#linearGradient5296);fill-rule:nonzero;stroke:none;stroke-width:1" />
+  <path
+     style="opacity:1;fill:#7bc8d2;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4.19999981;stroke-dasharray:none;stroke-opacity:1"
+     d="m 293.71773,302.64514 148.8105,0 -28.78629,40.98387 -92.70163,0 z"
+     id="cup-fluid"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     d="m 401.00894,210.40624 c 13.074,0 26.15,4.49 38.892,13.469 l 4.826,3.401 0,131.13 -152.072,0 0,-147.202 17.983,12.67 c 17.6,12.402 33.874,12.402 51.476,0 12.745,-8.978 25.819,-13.468 38.895,-13.468 z m -27.355,38.807 c -10.654,7.536 -21.587,11.303 -32.517,11.305 -5.842,0 -11.683,-1.077 -17.482,-3.229 l 0,70.117 89,0 0,-80.804 c -13.194,-7.71 -25.64,-6.84 -39.001,2.61 z"
+     id="cup"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="scccccccscccccccc"
+     style="fill:#ffffff;fill-opacity:1;opacity:1" />
+  <path
+     inkscape:connector-curvature="0"
+     id="fluid"
+     d="m 561.04294,233.51671 0,23.4 -51.505,0 0,27.18 38.539,0 0,23.4 -38.539,0 0,52.38 -30.793,0 0,-126.36 82.299,0 z m 52.045,-6.84 0,133.2 -30.795,0 0,-133.2 z m 126.06,32.76 0,100.44 -30.795,0 0,-14.76 c -3.001,4.92 -7.113,8.79 -12.336,11.61 -5.222,2.82 -11.255,4.23 -18.099,4.23 -7.563,0 -14.256,-1.71 -20.08,-5.13 -5.822,-3.42 -10.384,-8.37 -13.686,-14.85 -3.301,-6.48 -4.952,-14.1 -4.952,-22.86 l 0,-58.68 30.615,0 0,54.54 c 0,6.48 1.71,11.49 5.132,15.03 3.422,3.54 8.134,5.31 14.137,5.31 6.003,0 10.715,-1.77 14.137,-5.31 3.421,-3.54 5.132,-8.55 5.132,-15.03 l 0,-54.54 z m 24.311,-24.12 c 0,-5.16 1.741,-9.48 5.223,-12.96 3.481,-3.48 7.743,-5.22 12.786,-5.22 5.042,0 9.304,1.74 12.786,5.22 3.482,3.48 5.222,7.8 5.222,12.96 0,5.04 -1.74,9.3 -5.222,12.78 -3.482,3.48 -7.744,5.22 -12.786,5.22 -5.043,0 -9.305,-1.74 -12.786,-5.22 -3.482,-3.48 -5.223,-7.74 -5.223,-12.78 z m 33.496,24.12 0,100.44 -30.795,0 0,-100.44 z m 65.371,-1.08 c 12.846,0 22.691,4.74 29.534,14.22 l 0,-45.9 30.795,0 0,133.2 -30.795,0 0,-14.58 c -7.443,10.56 -17.288,15.84 -29.534,15.84 -8.284,0 -15.937,-2.16 -22.96,-6.48 -7.024,-4.32 -12.577,-10.38 -16.659,-18.18 -4.082,-7.8 -6.123,-16.68 -6.123,-26.64 0,-9.96 2.041,-18.84 6.123,-26.64 4.082,-7.8 9.635,-13.89 16.658,-18.27 7.024,-4.38 14.677,-6.57 22.961,-6.57 z m 7.564,26.64 c -3.602,0 -7.113,0.93 -10.535,2.79 -3.422,1.86 -6.183,4.65 -8.284,8.37 -2.101,3.72 -3.152,8.28 -3.152,13.68 0,5.4 1.05,9.93 3.152,13.59 2.1,3.66 4.832,6.42 8.194,8.28 3.361,1.86 6.903,2.79 10.625,2.79 3.602,0 7.113,-0.93 10.535,-2.79 3.422,-1.86 6.183,-4.65 8.284,-8.37 2.1,-3.72 3.151,-8.28 3.151,-13.68 0,-5.4 -1.05,-9.93 -3.151,-13.59 -2.101,-3.66 -4.832,-6.42 -8.194,-8.28 -3.362,-1.86 -6.903,-2.79 -10.625,-2.79 z"
+     sodipodi:nodetypes="ccccccccccccccccccccccsccsccssscsccscssssscscccccsccccccscssscsssssccsscssss"
+     style="fill:#ffffff;fill-opacity:1" />
+  <g
+     id="pipes">
+    <path
+       id="path5545"
+       d="m 608.05584,1089.3556 0.0743,115.5817"
+       inkscape:connector-curvature="0"
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round" />
+    <path
+       id="path5547"
+       d="m 608.09296,1089.3556 0,29.6817 c 0,11.0457 8.9543,20 20,20 l 178.88584,0 c 11.0457,0 20,8.9543 20,20 l 0,45.9"
+       inkscape:connector-curvature="0"
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round" />
+    <path
+       id="path5549"
+       d="m 608.09296,1089.3556 0,29.6817 c 0,11.0457 8.95431,20 20,20 l 405.95434,0 c 11.0457,0 20,8.9543 20,20 l 0,45.9"
+       inkscape:connector-curvature="0"
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#979797;stroke-width:8;stroke-linecap:round"
+       inkscape:connector-curvature="0"
+       d="m 609.12794,1089.3072 0,29.6817 c 0,11.0457 -8.95431,20 -20,20 l -333.95434,0 c -11.0457,0 -20,8.9543 -20,20 l 0,45.9"
+       id="path6477"
+       sodipodi:nodetypes="cssssc" />
+  </g>
+  <path
+     style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1"
+     inkscape:connector-curvature="0"
+     d="m 567.02381,1033.099 80.08905,0 c 2.20914,0 4,1.7909 4,4 0,0.6589 -0.16276,1.3075 -0.4738,1.8884 l -29.23695,54.5949 c -0.61527,1.1489 -0.90526,1.5243 -1.29325,1.8894 -0.38799,0.3651 -0.82375,0.626 -1.32875,0.7957 -0.505,0.1697 -0.97284,0.2481 -2.27611,0.2481 l -17.08324,0 c -1.27999,0 -1.73854,-0.074 -2.23484,-0.2365 -0.4963,-0.1621 -0.92586,-0.4122 -1.31199,-0.7636 -0.38612,-0.3515 -0.67719,-0.7135 -1.30933,-1.8265 l -31.01894,-54.6144 c -1.09102,-1.921 -0.41824,-4.3626 1.50269,-5.4537 0.60221,-0.342 1.2829,-0.5218 1.97546,-0.5218 z"
+     id="funnel" />
+  <g
+     id="arrows">
+    <path
+       id="Triangle-9"
+       d="m 233.71885,1222.9841 -12.77476,-19.4322 c -0.93206,-1.4178 -0.53467,-3.3204 0.88759,-4.2495 0.5015,-0.3277 1.08805,-0.5022 1.68764,-0.5022 l 25.54951,0 c 1.70046,0 3.07895,1.3742 3.07895,3.0693 0,0.5977 -0.17507,1.1824 -0.50372,1.6824 l -12.77475,19.4322 c -0.93206,1.4178 -2.84062,1.8139 -4.26288,0.8848 -0.35367,-0.231 -0.65581,-0.5322 -0.88758,-0.8848 z"
+       inkscape:connector-curvature="0"
+       style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <path
+       id="Triangle-Copy-0"
+       d="m 605.00652,1222.9841 -12.77476,-19.4322 c -0.93206,-1.4178 -0.53467,-3.3204 0.88759,-4.2495 0.5015,-0.3277 1.08805,-0.5022 1.68764,-0.5022 l 25.54951,0 c 1.70046,0 3.07895,1.3742 3.07895,3.0693 0,0.5977 -0.17507,1.1824 -0.50372,1.6824 l -12.77475,19.4322 c -0.93206,1.4178 -2.84062,1.8139 -4.26288,0.8848 -0.35367,-0.231 -0.65581,-0.5322 -0.88758,-0.8848 z"
+       inkscape:connector-curvature="0"
+       style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <path
+       id="Triangle-Copy-2-6"
+       d="m 824.9152,1222.9841 -12.77476,-19.4322 c -0.93206,-1.4178 -0.53467,-3.3204 0.88759,-4.2495 0.5015,-0.3277 1.08804,-0.5022 1.68764,-0.5022 l 25.54951,0 c 1.70046,0 3.07895,1.3742 3.07895,3.0693 0,0.5977 -0.17507,1.1824 -0.50372,1.6824 l -12.77476,19.4322 c -0.93206,1.4178 -2.84061,1.8139 -4.26287,0.8848 -0.35367,-0.231 -0.65581,-0.5322 -0.88758,-0.8848 z"
+       inkscape:connector-curvature="0"
+       style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <path
+       id="Triangle-Copy-3-3"
+       d="m 1050.9609,1222.9841 -12.7748,-19.4322 c -0.9321,-1.4178 -0.5347,-3.3204 0.8876,-4.2495 0.5015,-0.3277 1.088,-0.5022 1.6876,-0.5022 l 25.5495,0 c 1.7005,0 3.079,1.3742 3.079,3.0693 0,0.5977 -0.1751,1.1824 -0.5037,1.6824 l -12.7748,19.4322 c -0.932,1.4178 -2.8406,1.8139 -4.2629,0.8848 -0.3536,-0.231 -0.6558,-0.5322 -0.8875,-0.8848 z"
+       inkscape:connector-curvature="0"
+       style="fill:#979797;fill-rule:evenodd;stroke:none;stroke-width:1" />
+  </g>
+  <g
+     id="g6059">
+    <path
+       style="fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:connector-curvature="0"
+       id="Combined-Shape"
+       d="m 61,1623 0,-175 c 0,-11.0457 8.954305,-20 20,-20 l 318,0 c 11.0457,0 20,8.9543 20,20 l 0,175 17,0 c 4.97056,0 9,4.0294 9,9 l 0,15 c 0,5.5228 -4.47715,10 -10,10 l -390,0 c -5.522847,0 -10,-4.4772 -10,-10 l 0,-15 c 0,-4.9706 4.029437,-9 9,-9 l 17,0 z m 145,11 c -3.31371,0 -6,2.6863 -6,6 0,3.3137 2.68629,6 6,6 l 69,0 c 3.31371,0 6,-2.6863 6,-6 0,-3.3137 -2.68629,-6 -6,-6 l -69,0 z M 87,1443 c -5.522847,0 -10,4.4772 -10,10 l 0,170 327,0 0,-170 c 0,-5.5228 -4.47715,-10 -10,-10 l -307,0 z" />
+    <path
+       style="fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:connector-curvature="0"
+       id="Combined-Shape-Copy"
+       d="m 801,1525 -12,0 c -3.86599,0 -7,3.134 -7,7 l 0,115 c 0,3.866 3.13401,7 7,7 l 59,0 c 3.86599,0 7,-3.134 7,-7 l 0,-115 c 0,-3.866 -3.13401,-7 -7,-7 l -11,0 0,1 c 0,1.6568 -1.34315,3 -3,3 l -30,0 c -1.65685,0 -3,-1.3432 -3,-3 l 0,-1 z m -12,-3 59,0 c 5.52285,0 10,4.4772 10,10 l 0,115 c 0,5.5228 -4.47715,10 -10,10 l -59,0 c -5.52285,0 -10,-4.4772 -10,-10 l 0,-115 c 0,-5.5228 4.47715,-10 10,-10 z" />
+    <path
+       style="fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1"
+       inkscape:connector-curvature="0"
+       id="path38"
+       d="m 552,1453 119,0 c 7.73199,0 14,6.268 14,14 l 0,176 c 0,7.732 -6.26801,14 -14,14 l -119,0 c -7.73199,0 -14,-6.268 -14,-14 l 0,-176 c 0,-7.732 6.26801,-14 14,-14 z m 0,11 c -2.20914,0 -4,1.7909 -4,4 l 0,160 c 0,2.2091 1.79086,4 4,4 l 119,0 c 2.20914,0 4,-1.7909 4,-4 l 0,-160 c 0,-2.2091 -1.79086,-4 -4,-4 l -119,0 z m 60,187 c 3.86599,0 7,-3.134 7,-7 0,-3.866 -3.13401,-7 -7,-7 -3.86599,0 -7,3.134 -7,7 0,3.866 3.13401,7 7,7 z" />
+    <g
+       transform="translate(998,1523)"
+       id="Group-2"
+       style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1">
+      <g
+         id="g51">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           style="fill:#d8d8d8;fill-rule:evenodd"
+           id="use53"
+           xlink:href="#path-3" />
+        <path
+           style="stroke:#ffffff;stroke-width:3"
+           inkscape:connector-curvature="0"
+           id="path55"
+           d="m 7.5080435,30.5 -5.791696,62.485884 c -0.831673,14.777216 0.7469639,24.795546 4.5864354,29.982646 3.3579994,4.53664 8.1456501,8.31795 14.3846801,11.33932 l 25.453183,0 14.312537,0 c 6.23903,-3.02137 11.026681,-6.80268 14.38468,-11.33932 3.839472,-5.1871 5.418108,-15.20543 4.589631,-29.937833 L 72.856917,16.971284 35.261675,30.5 7.5080435,30.5 Z" />
+      </g>
+      <g
+         id="g57">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           style="fill:#d8d8d8;fill-rule:evenodd"
+           id="use59"
+           xlink:href="#path-4" />
+        <path
+           style="stroke:#ffffff;stroke-width:3"
+           inkscape:connector-curvature="0"
+           id="path61"
+           d="m 1.533368,97.5 c -0.291488,12.32675 1.3379097,20.83259 4.7694149,25.46853 3.3579994,4.53664 8.1456501,8.31795 14.3846801,11.33932 l 25.453183,0 14.312537,0 c 6.23903,-3.02137 11.026681,-6.80268 14.38468,-11.33932 3.431505,-4.63594 5.060903,-13.14178 4.769415,-25.46853 l -78.07391,0 z" />
+      </g>
+      <g
+         transform="matrix(0.97437006,-0.22495105,0.22495105,0.97437006,-3.9732812,9.6134606)"
+         id="Oval-2">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           style="fill:#d8d8d8;fill-rule:evenodd"
+           id="use64"
+           xlink:href="#path-5" />
+        <ellipse
+           style="stroke:#ffffff;stroke-width:3"
+           id="ellipse66"
+           ry="13.198683"
+           rx="33.286583"
+           cy="22.243252"
+           cx="40.201488" />
+      </g>
+    </g>
+  </g>
+  <metadata
+     id="metadata6086">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="droplets">
+    <path
+       style="fill:url(#linearGradient6125);fill-rule:nonzero;stroke:none;stroke-width:1;opacity:0"
+       inkscape:connector-curvature="0"
+       d="m 236.67026,1223.4579 c -0.33925,0.036 -0.65545,0.1881 -0.89518,0.4294 -7.82779,7.9177 -15.24887,18.1719 -15.24887,27.2838 0,9.055 7.30559,16.4564 16.29839,16.4564 8.99285,0 16.29838,-7.4014 16.29838,-16.4564 0,-9.1119 -7.42111,-19.3661 -15.24886,-27.2838 -0.31526,-0.317 -0.75787,-0.4746 -1.20386,-0.4294 z"
+       id="path6123" />
+    <path
+       id="path6119"
+       d="m 606.50091,1223.4579 c -0.33925,0.036 -0.65545,0.1881 -0.89518,0.4294 -7.82779,7.9177 -15.24887,18.1719 -15.24887,27.2838 0,9.055 7.30559,16.4564 16.29839,16.4564 8.99285,0 16.29838,-7.4014 16.29838,-16.4564 0,-9.1119 -7.42111,-19.3661 -15.24886,-27.2838 -0.31526,-0.317 -0.75787,-0.4746 -1.20386,-0.4294 z"
+       inkscape:connector-curvature="0"
+       style="fill:url(#linearGradient6121);fill-rule:nonzero;stroke:none;stroke-width:1;opacity:0" />
+    <path
+       style="fill:url(#linearGradient6129);fill-rule:nonzero;stroke:none;stroke-width:1;opacity:0"
+       inkscape:connector-curvature="0"
+       d="m 827.30071,1223.4579 c -0.33925,0.036 -0.65545,0.1881 -0.89518,0.4294 -7.82779,7.9177 -15.24887,18.1719 -15.24887,27.2838 0,9.055 7.30559,16.4564 16.29839,16.4564 8.99285,0 16.29838,-7.4014 16.29838,-16.4564 0,-9.1119 -7.42111,-19.3661 -15.24886,-27.2838 -0.31526,-0.317 -0.75787,-0.4746 -1.20386,-0.4294 z"
+       id="path6127" />
+    <path
+       style="fill:url(#linearGradient6133);fill-rule:nonzero;stroke:none;stroke-width:1;opacity:0"
+       inkscape:connector-curvature="0"
+       d="m 1053.6205,1223.4579 c -0.3393,0.036 -0.6555,0.1881 -0.8952,0.4294 -7.8278,7.9177 -15.2489,18.1719 -15.2489,27.2838 0,9.055 7.3056,16.4564 16.2984,16.4564 8.9929,0 16.2984,-7.4014 16.2984,-16.4564 0,-9.1119 -7.4211,-19.3661 -15.2488,-27.2838 -0.3153,-0.317 -0.7579,-0.4746 -1.2039,-0.4294 z"
+       id="path6131" />
+  </g>
+  <g
+     id="screens-gray"
+     style="opacity:1">
+    <rect
+       id="rect6306"
+       x="90"
+       y="1460"
+       width="89"
+       height="33"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6308"
+       x="184"
+       y="1460"
+       width="206"
+       height="33"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6310"
+       x="90"
+       y="1498"
+       width="300"
+       height="56"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6312"
+       x="90"
+       y="1559"
+       width="96"
+       height="56"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6314"
+       x="192"
+       y="1559"
+       width="96"
+       height="56"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6316"
+       x="294"
+       y="1559"
+       width="96"
+       height="56"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6318"
+       x="555"
+       y="1470"
+       width="33"
+       height="19"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6320"
+       x="590"
+       y="1470"
+       width="78"
+       height="19"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6322"
+       x="555"
+       y="1491"
+       width="113"
+       height="54"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6324"
+       x="555"
+       y="1547"
+       width="36"
+       height="54"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6326"
+       x="593"
+       y="1547"
+       width="37"
+       height="54"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6328"
+       x="632"
+       y="1547"
+       width="36"
+       height="54"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6330"
+       x="555"
+       y="1603"
+       width="113"
+       height="27"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="19"
+       width="18.362904"
+       y="1533.48"
+       x="786.83978"
+       id="rect6332" />
+    <rect
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="19"
+       width="41.430035"
+       y="1533.48"
+       x="807.83978"
+       id="rect6334" />
+    <rect
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="54"
+       width="62.285046"
+       y="1554.48"
+       x="786.83978"
+       id="rect6336" />
+    <rect
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="38.130016"
+       width="36"
+       y="1610.48"
+       x="786.83978"
+       id="rect6338" />
+    <rect
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       height="37.440014"
+       width="24.235012"
+       y="1610.48"
+       x="824.83978"
+       id="rect6340" />
+    <path
+       d="m 1125.1223,1358.9199 3.3777,8.105 c -6.916,-3.1442 -11.494,-5.0366 -13.7342,-5.6773 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.1738 0,-6.7234 5.4504,-12.1738 12.1738,-12.1738 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.1738 0,3.9865 -1.9161,7.5254 -4.8777,9.7461 z"
+       id="path6342"
+       inkscape:connector-curvature="0"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6344"
+       transform="scale(-1,1)"
+       x="-1081"
+       y="1372"
+       width="130"
+       height="24"
+       rx="12"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <path
+       d="m 955.87768,1420.9199 -3.37767,8.105 c 6.91597,-3.1442 11.49402,-5.0366 13.73417,-5.6773 l 102.59202,0 c 6.7234,0 12.1738,-5.4504 12.1738,-12.1738 0,-6.7234 -5.4504,-12.1738 -12.1738,-12.1738 l -105.65239,0 C 956.4504,1399 951,1404.4504 951,1411.1738 c 0,3.9865 1.91615,7.5254 4.87768,9.7461 z"
+       id="path6346"
+       inkscape:connector-curvature="0"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <rect
+       id="rect6348"
+       transform="scale(-1,1)"
+       x="-1130"
+       y="1437"
+       width="130"
+       height="24"
+       rx="12"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+    <path
+       d="m 1125.1223,1485.9199 3.3777,8.105 c -6.916,-3.1442 -11.494,-5.0366 -13.7342,-5.6773 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.1738 0,-6.7234 5.4504,-12.1738 12.1738,-12.1738 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.1738 0,3.9865 -1.9161,7.5254 -4.8777,9.7461 z"
+       id="path6350"
+       inkscape:connector-curvature="0"
+       style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1" />
+  </g>
+  <g
+     style="opacity:1"
+     id="screens-flash">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="33"
+       width="89"
+       y="1460"
+       x="90"
+       id="rect6368" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="33"
+       width="206"
+       y="1460"
+       x="184"
+       id="rect6370" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="56"
+       width="300"
+       y="1498"
+       x="90"
+       id="rect6372" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="56"
+       width="96"
+       y="1559"
+       x="90"
+       id="rect6374" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="56"
+       width="96"
+       y="1559"
+       x="192"
+       id="rect6376" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="56"
+       width="96"
+       y="1559"
+       x="294"
+       id="rect6378" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="19"
+       width="33"
+       y="1470"
+       x="555"
+       id="rect6380" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="19"
+       width="78"
+       y="1470"
+       x="590"
+       id="rect6382" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="54"
+       width="113"
+       y="1491"
+       x="555"
+       id="rect6384" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="54"
+       width="36"
+       y="1547"
+       x="555"
+       id="rect6386" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="54"
+       width="37"
+       y="1547"
+       x="593"
+       id="rect6388" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="54"
+       width="36"
+       y="1547"
+       x="632"
+       id="rect6390" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       height="27"
+       width="113"
+       y="1603"
+       x="555"
+       id="rect6392" />
+    <rect
+       id="rect6394"
+       x="786.83978"
+       y="1533.48"
+       width="18.362904"
+       height="19"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0" />
+    <rect
+       id="rect6396"
+       x="807.83978"
+       y="1533.48"
+       width="41.430035"
+       height="19"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0" />
+    <rect
+       id="rect6398"
+       x="786.83978"
+       y="1554.48"
+       width="62.285046"
+       height="54"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0" />
+    <rect
+       id="rect6400"
+       x="786.83978"
+       y="1610.48"
+       width="36"
+       height="38.130016"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0" />
+    <rect
+       id="rect6402"
+       x="824.83978"
+       y="1610.48"
+       width="24.235012"
+       height="37.440014"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       inkscape:connector-curvature="0"
+       id="path6404"
+       d="m 1125.1223,1358.9199 3.3777,8.105 c -6.916,-3.1442 -11.494,-5.0366 -13.7342,-5.6773 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.1738 0,-6.7234 5.4504,-12.1738 12.1738,-12.1738 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.1738 0,3.9865 -1.9161,7.5254 -4.8777,9.7461 z" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       rx="12"
+       height="24"
+       width="130"
+       y="1372"
+       x="-1081"
+       transform="scale(-1,1)"
+       id="rect6406" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       inkscape:connector-curvature="0"
+       id="path6408"
+       d="m 955.87768,1420.9199 -3.37767,8.105 c 6.91597,-3.1442 11.49402,-5.0366 13.73417,-5.6773 l 102.59202,0 c 6.7234,0 12.1738,-5.4504 12.1738,-12.1738 0,-6.7234 -5.4504,-12.1738 -12.1738,-12.1738 l -105.65239,0 C 956.4504,1399 951,1404.4504 951,1411.1738 c 0,3.9865 1.91615,7.5254 4.87768,9.7461 z" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       rx="12"
+       height="24"
+       width="130"
+       y="1437"
+       x="-1130"
+       transform="scale(-1,1)"
+       id="rect6410" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;opacity:0"
+       inkscape:connector-curvature="0"
+       id="path6412"
+       d="m 1125.1223,1485.9199 3.3777,8.105 c -6.916,-3.1442 -11.494,-5.0366 -13.7342,-5.6773 l -102.592,0 c -6.7234,0 -12.1738,-5.4504 -12.1738,-12.1738 0,-6.7234 5.4504,-12.1738 12.1738,-12.1738 l 105.6524,0 c 6.7234,0 12.1738,5.4504 12.1738,12.1738 0,3.9865 -1.9161,7.5254 -4.8777,9.7461 z" />
+  </g>
+</svg>
+=======
 <div class="row">
     <script>
   var TITLE_WAVE_DURATION = 10000;
@@ -2150,6 +3356,7 @@ window.addEventListener('load', function() {
   </g>
 </svg>
 </div>
+>>>>>>> 3c77a0de492bedc31b038b18f968c7005589b69e
 <section class="row">
   <div class="small-12 medium-4 columns">
     <div class="image-container"><img src="img/fluidaction.svg" alt="Fluid Design Action Icon"></div>
@@ -2171,109 +3378,116 @@ window.addEventListener('load', function() {
     <p class="hero-text">Your Design Experience Elevated.</p>
   </div>
   <div class="small-12 columns">
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/actionstackmodule.svg" alt="Action Stack Image"></div>
+    <ul id="container1" class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+      <li>
+        <div class="feature-container">
+          <div class="feature-tile columns">
+            <div class="small-12 columns">
+              <div class="image-container feature-image"><img src="img/actionstackmodule.svg" alt="Action Stack Image"></div>
+            </div>
+            <div class="small-12 columns">
+              <div class="feature-icon"><img src="img/coreactionblock.svg" alt="Core Action Block Icon"></div>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-title">Actions Start your Experience.</p>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-text">Actions build the base of your experience and help to keep functions crisp and clear.</p>
+            </div>
+          </div>
         </div>
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/coreactionblock.svg" alt="Core Action Block Icon"></div>
+      </li>
+      <li>
+        <div class="feature-container">
+          <div class="feature-tile columns">
+            <div class="small-12 columns">
+              <div class="image-container feature-image"><img src="img/addplatform.svg" alt="Add Platform Modal"></div>
+            </div>
+            <div class="small-12 columns">
+              <div class="feature-icon"><img src="img/platform.svg" alt="Platform Icon"></div>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-title">Multi-platform Support</p>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-text">Propagate all your actions to any platform. Create beautiful multi-platform experiences.</p>
+            </div>
+          </div>
         </div>
-        <div class="small-12 columns">
-          <p class="feature-title">Actions Start your Experience.</p>
+      </li>
+      <li>
+        <div class="feature-container">
+          <div class="feature-tile columns">
+            <div class="small-12 columns">
+              <div class="image-container feature-image"><img src="img/screendesigntools.png" alt="Screen Design Tools"></div>
+            </div>
+            <div class="small-12 columns">
+              <div class="feature-icon"><img src="img/phoneicon.svg" alt="Screen Design Icon"></div>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-title">Screen Design Tools</p>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-text">All the tools you need to craft the best application on screen. Everything to create a great visual language.</p>
+            </div>
+          </div>
         </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Actions build the base of your experience and help to keep functions crisp and clear.</p>
+      </li>
+      <li>
+        <div class="feature-container">
+          <div class="feature-tile columns">
+            <div class="small-12 columns">
+              <div class="image-container feature-image"><img src="img/screenproperties.png" alt="Screen Design Properties"></div>
+            </div>
+            <div class="small-12 columns">
+              <div class="feature-icon"><img src="img/phoneicon.svg" alt="Phone Icon"></div>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-title">Screen Design Properties</p>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-text">Adjust until your hearts content with all the expected properties for any screen interface element.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/addplatform.svg" alt="Add Platform Modal"></div>
+      </li>
+      <li>
+        <div class="feature-container">
+          <div class="feature-tile columns">
+            <div class="small-12 columns">
+              <div class="image-container feature-image"><img src="img/voicetools.svg" alt="Voice Design Tools"></div>
+            </div>
+            <div class="small-12 columns">
+              <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-title">Voice Design Tools</p>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-text">All the elements in one place to assemble the perfect voice flow. From system responses to variables to the user requests.</p>
+            </div>
+          </div>
         </div>
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/platform.svg" alt="Platform Icon"></div>
+      </li>
+      <li>
+        <div class="feature-container">
+          <div class="feature-tile columns">
+            <div class="small-12 columns">
+              <div class="image-container feature-image"><img src="img/voiceproperties.png" alt="Voice Design Properties"></div>
+            </div>
+            <div class="small-12 columns">
+              <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-title">Voice Design Properties</p>
+            </div>
+            <div class="small-12 columns">
+              <p class="feature-text">With the voice design properties you are able to create just the right character for your application. Specify an accent or a tone really matching the mood of your users.</p>
+            </div>
+          </div>
         </div>
-        <div class="small-12 columns">
-          <p class="feature-title">Multi-platform Support</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Propagate all your actions to any platform. Create beautiful multi-platform experiences.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/screendesigntools.png" alt="Screen Design Tools"></div>
-        </div>
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/phoneicon.svg" alt="Screen Design Icon"></div>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-title">Screen Design Tools</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">All the tools you need to craft the best application on screen. Everything to create a great visual language.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/screenproperties.png" alt="Screen Design Properties"></div>
-        </div>
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/phoneicon.svg" alt="Phone Icon"></div>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-title">Screen Design Properties</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Adjust until your hearts content with all the expected properties for any screen interface element.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/voicetools.svg" alt="Voice Design Tools"></div>
-        </div>
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-title">Voice Design Tools</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">All the elements in one place to assemble the perfect voice flow. From system responses to variables to the user requests.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/voiceproperties.png" alt="Voice Design Properties"></div>
-        </div>
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-title">Voice Design Properties</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">With the voice design properties you are able to create just the right character for your application. Specify an accent or a tone really matching the mood of your users.</p>
-        </div>
-      </div>
-    </div>
-    
+      </li>
+    </ul>
   </div>
   <div class="small-12 columns">
     <div class="small-12 columns feature-container">
@@ -2307,99 +3521,109 @@ window.addEventListener('load', function() {
     <h1>Future Works</h1>
     <p style="margin-bottom: 100px;">All in all Fluid Design addresses some of the questions around designing platform-agnostic experience, but could afford further study with more details and nuances for designers and their users.</p>
   </div>
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/futuredaynight.svg" alt="Future Works: Context Aware Icon"></div>
-        </div>
-<!--
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
-        </div>
--->
-        <div class="small-12 columns">
-          <p class="feature-title future-title">Content Aware</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Explore what a content aware design space would look like. Allowing designers to handle user environmental cases such as day time or night time modes.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/futuremotion.svg" alt="Future Works: Motion Design Icon"></div>
-        </div>
-<!--
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
-        </div>
--->
-        <div class="small-12 columns">
-          <p class="feature-title future-title">Motion Design</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Give designers the tools they need to animate at the object level. Allowing for high fidelity prototyping of all your screen designs.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/futuresound.svg" alt="Future Works: Sound Design Icon"></div>
-        </div>
-<!--
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
-        </div>
--->
-        <div class="small-12 columns">
-          <p class="feature-title future-title">Sound Design</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Share the love of sound with your users. Sound design tools give you the power to share all kinds of sounds with your voice experiences.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/futuredev.svg" alt="Future Works: Development Handoff Icon"></div>
-        </div>
-<!--
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
-        </div>
--->
-        <div class="small-12 columns">
-          <p class="feature-title future-title">Dev Handoff</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Create a clean and smooth process to handoff your design to developers. Share screen and voice specifications and from wireframes to fully rendered applications.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="small-12 medium-6 columns feature-container">
-      <div class="feature-tile columns">
-        <div class="small-12 columns">
-          <div class="image-container feature-image"><img src="img/futureplatform.svg" alt="Future Works: Future Platforms Icon"></div>
-        </div>
-<!--
-        <div class="small-12 columns">
-          <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
-        </div>
--->
-        <div class="small-12 columns">
-          <p class="feature-title future-title">Future Platform Test</p>
-        </div>
-        <div class="small-12 columns">
-          <p class="feature-text">Test out future platforms with Fluid Design. Ensuring that all the necessary tools are in place for the designing the best possible experiences.</p>
-        </div>
-      </div>
+    <div class="small-12 columns">
+      <ul id="container2" class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+        <li>
+          <div class="feature-container">
+            <div class="feature-tile columns">
+              <div class="small-12 columns">
+                <div class="image-container feature-image"><img src="img/futuredaynight.svg" alt="Future Works: Context Aware Icon"></div>
+              </div>
+      <!--
+              <div class="small-12 columns">
+                <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
+              </div>
+      -->
+              <div class="small-12 columns">
+                <p class="feature-title future-title">Content Aware</p>
+              </div>
+              <div class="small-12 columns">
+                <p class="feature-text">Explore what a content aware design space would look like. Allowing designers to handle user environmental cases such as day time or night time modes.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-container">
+            <div class="feature-tile columns">
+              <div class="small-12 columns">
+                <div class="image-container feature-image"><img src="img/futuremotion.svg" alt="Future Works: Motion Design Icon"></div>
+              </div>
+      <!--
+              <div class="small-12 columns">
+                <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
+              </div>
+      -->
+              <div class="small-12 columns">
+                <p class="feature-title future-title">Motion Design</p>
+              </div>
+              <div class="small-12 columns">
+                <p class="feature-text">Give designers the tools they need to animate at the object level. Allowing for high fidelity prototyping of all your screen designs.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-container">
+            <div class="feature-tile columns">
+              <div class="small-12 columns">
+                <div class="image-container feature-image"><img src="img/futuresound.svg" alt="Future Works: Sound Design Icon"></div>
+              </div>
+      <!--
+              <div class="small-12 columns">
+                <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
+              </div>
+      -->
+              <div class="small-12 columns">
+                <p class="feature-title future-title">Sound Design</p>
+              </div>
+              <div class="small-12 columns">
+                <p class="feature-text">Share the love of sound with your users. Sound design tools give you the power to share all kinds of sounds with your voice experiences.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-container">
+            <div class="feature-tile columns">
+              <div class="small-12 columns">
+                <div class="image-container feature-image"><img src="img/futuredev.svg" alt="Future Works: Development Handoff Icon"></div>
+              </div>
+      <!--
+              <div class="small-12 columns">
+                <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
+              </div>
+      -->
+              <div class="small-12 columns">
+                <p class="feature-title future-title">Dev Handoff</p>
+              </div>
+              <div class="small-12 columns">
+                <p class="feature-text">Create a clean and smooth process to handoff your design to developers. Share screen and voice specifications and from wireframes to fully rendered applications.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-container">
+            <div class="feature-tile columns">
+              <div class="small-12 columns">
+                <div class="image-container feature-image"><img src="img/futureplatform.svg" alt="Future Works: Future Platforms Icon"></div>
+              </div>
+      <!--
+              <div class="small-12 columns">
+                <div class="feature-icon"><img src="img/voiceicon.svg" alt="Voice Icon"></div>
+              </div>
+      -->
+              <div class="small-12 columns">
+                <p class="feature-title future-title">Future Platform Test</p>
+              </div>
+              <div class="small-12 columns">
+                <p class="feature-text">Test out future platforms with Fluid Design. Ensuring that all the necessary tools are in place for the designing the best possible experiences.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
 </section>
 <!--    </div>-->
