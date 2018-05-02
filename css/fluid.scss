@@ -396,6 +396,13 @@ svg{
   }
 }
 
+.full-width {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
 // Tablet Styling
 @media screen and (max-width: 64em) {
   
