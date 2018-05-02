@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
 				easing: 'easeOutQuad',
 				opacity: 0,
 			    offset: -1000,
-			    translateX: (m.className.includes('left-message') ? '-' : '') + '500px',
+			    translateX: (m.className.includes('right-message') ? '-' : '') + '500px',
 			    duration: 999,
 			});
 			t.add({
