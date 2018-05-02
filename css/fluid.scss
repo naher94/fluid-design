@@ -121,13 +121,19 @@ section{
 
 .workshop-numbers{
   position: relative;
-  font-size: 50px;
+//  font-size: 50px;
   font-weight: $lato-bold;
   font-family: $lato;
+  margin-right: 10px;
 }
 
 .workshop-title{
+  margin-top: 10px;
+  margin-bottom: 20px;
   font-size: 26px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: $lato-regular;
 }
 
 .workshop1{
