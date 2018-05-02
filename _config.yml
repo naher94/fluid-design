@@ -7,15 +7,11 @@
 
 # Site settings
 title: Fluid Design
-email: your-email@domain.com
+email: me@rehanbutt.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Fluid Design is a design tool that helps you create experiences for a wide range of platforms including mobile, tablet, desktop and voice all in one place.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://fluid-design.rehanbutt.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
 
 # Build settings
 markdown: kramdown

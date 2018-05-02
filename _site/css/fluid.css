@@ -193,6 +193,9 @@ section {
 .future-title {
   margin-top: 20px; }
 
+.linked {
+  cursor: pointer; }
+
 header {
   height: 50vh;
   overflow: hidden;
