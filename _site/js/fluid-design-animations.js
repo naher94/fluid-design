@@ -1,4 +1,15 @@
+
 window.addEventListener('load', function() {
+	$(document).foundation();
+	var container1 = document.querySelector('#container1');
+	var msnry = new Masonry( container1, {
+		itemSelector: '#container1 li'
+	});
+
+	var container2 = document.querySelector('#container2');
+	var msnry = new Masonry( container2, {
+		itemSelector: '#container2 li'
+	});
 	
 	var messageBubbles = document.getElementsByClassName('message-bubble');
 	for(var i = 0; i < messageBubbles.length; i++) {
