@@ -201,6 +201,11 @@ section {
 .linked {
   cursor: pointer; }
 
+a {
+  color: #F15F63; }
+  a:hover {
+    color: #F79868; }
+
 header {
   height: 50vh;
   overflow: hidden;

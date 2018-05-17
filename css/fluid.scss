@@ -279,9 +279,15 @@ section{
   margin-top: 20px;
 }
 
-
 .linked{
   cursor: pointer;
+}
+
+a{
+  color: $fluid-cranberry;
+  &:hover{
+    color: $fluid-orange;
+  }
 }
 
 //****** header wave stuff
